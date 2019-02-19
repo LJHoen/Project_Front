@@ -1,0 +1,29 @@
+<div>
+  <br>
+  <button  routerLink="/home" class="btn btn-primary">Home</button>
+  <br>
+</div>
+
+<fieldset>
+<ul>
+  <h3>Your ordered items:</h3>
+  <li *ngFor="let dish of currentUser.order">
+    {{dish.name}} ({{dish.price}}{{dish.time}})
+  </li>
+  <li>
+    {{currentUser.order.price}}
+  </li>
+</ul>
+
+<div>
+  <br>
+  <button (ngSubmit)="onSubmit()">Checkout</button>
+  <br>
+</div>
+</fieldset>
+
+<div>
+  <br>
+  <button  routerLink="/home" class="btn btn-primary">Home</button>
+  <br>
+</div>

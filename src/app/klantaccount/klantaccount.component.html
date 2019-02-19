@@ -1,0 +1,53 @@
+<h1>Hi {{currentUser.firstName}}!</h1>
+
+<div>
+  <br>
+  <button  routerLink="/home" class="btn btn-primary">Home</button>
+  <br>
+</div>
+
+
+<fieldset>
+  <legend>Update account settings</legend>
+<div>
+    <p>First Name:</p>
+    <input type="text" class="form-control" >
+    <p>Last Name:</p>
+    <input type="text" class="form-control" >
+  </div>
+  <div>
+    <p>Password:</p>
+    <input type="password" class="form-control" >
+  </div>
+  <div>
+    <p>Address:</p>
+    <input type="text" class="form-control" >
+  </div>
+  <div>
+    <p>Bank Account:</p>
+    <input type="text" class="form-control" >
+  </div>
+  <div>
+    <br>
+    <button routerLink="/home" class="btn btn-primary">Save</button>
+    <br>
+  </div>
+</fieldset>
+
+<div>
+  <br>
+  <button  routerLink="/home" class="btn btn-primary">Home</button>
+  <br>
+</div>
+
+<!--- <div *ngIf="currentUse.orders.length > 0"> --->
+  <h2>Order history:</h2>
+  <table *ngFor="let order of currentUser.orders">
+    <tr *ngFor="let dish of order">
+      <td>{{dish.name}}</td>
+      <td>{{dish.price}}</td>
+      <td>{{dish.supply}}</td>
+    </tr>
+  </table>
+<!--- </div> --->
+
