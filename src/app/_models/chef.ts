@@ -1,13 +1,11 @@
-import {Order} from './order';
+import {User} from './user';
 
-export class User {
+export class Chef extends User {
   id: number;
   username: string;
   password: string;
   firstName: string;
   lastName: string;
-  address: string;
-  bankAccount: string;
-  orders: Order[];
+  rating: string;
   token: string;
 }

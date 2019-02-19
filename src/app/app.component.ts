@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationService } from './_services';
-import { User } from './_models';
+import { CustomerAuthService } from './_services';
+import { ChefAuthService } from './_services';
+import {Chef, Customer} from './_models';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +10,26 @@ import { User } from './_models';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'eatmeapp';
-  currentUser: User;
+  title = 'EAT ME!';
+  currentUser1: Chef;
+  currentUser2: Customer;
 
   constructor(
     private router: Router,
-    private authenticationService: AuthenticationService
+    private chefAuthService: ChefAuthService,
+    private customerAuthService: CustomerAuthService
   ) {
-    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+    this.chefAuthService.currentUser.subscribe(x => {
+      return this.currentUser1 = x;
+    });
+    this.customerAuthService.currentUser.subscribe( y => {
+      return this.currentUser2 = y;
+    });
   }
 
   logout() {
-    this.authenticationService.logout();
+    this.chefAuthService.logout();
+    this.customerAuthService.logout();
     this.router.navigate(['/login']);
   }
 }

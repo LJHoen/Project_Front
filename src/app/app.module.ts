@@ -2,10 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import {ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { HomeComponent } from './home/home.component';
+import { CustomerHomeComponent } from './home/customerhome.component';
 import { AlertComponent } from './_components';
 
 /**
@@ -15,18 +15,24 @@ import { fakeBackendProvider } from './_helpers';
 
 
 import { routing } from './app.routing';
+
 import { ChefHomeComponent } from './chef-home/chef-home.component';
 import { MenuListComponent } from './menu-list/menu-list.component';
+import { KlantAccountComponent } from './klantaccount/klantaccount.component';
+import { ShoppingCartComponent } from './shoppingcart/shoppingcart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent,
     AlertComponent,
     ChefHomeComponent,
-    MenuListComponent
+    MenuListComponent,
+    CustomerHomeComponent,
+    AlertComponent,
+    KlantAccountComponent,
+    ShoppingCartComponent,
   ],
   imports: [
     BrowserModule,

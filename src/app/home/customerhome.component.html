@@ -1,0 +1,13 @@
+<h1>Welcome to EAT ME!!</h1>
+<h3>All available dishes:</h3>
+<ul>
+  <li *ngFor="let dish of dishes">
+    {{dish.name}} ({{dish.price}} {{dish.time}} {{dish.supply}})
+    <button (click)="addDish(dish.id)" class="btn btn-primary">Add</button>
+  </li>
+</ul>
+
+
+<button routerLink="/shoppingcart" class="btn btn-primary">Shopping Cart</button>
+
+<button routerLink="/klantaccount" class="btn btn-primary">Account</button>
