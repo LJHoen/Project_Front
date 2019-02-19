@@ -15,6 +15,8 @@ import { fakeBackendProvider } from './_helpers';
 
 
 import { routing } from './app.routing';
+import { ChefHomeComponent } from './chef-home/chef-home.component';
+import { MenuListComponent } from './menu-list/menu-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { routing } from './app.routing';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    AlertComponent
+    AlertComponent,
+    ChefHomeComponent,
+    MenuListComponent
   ],
   imports: [
     BrowserModule,

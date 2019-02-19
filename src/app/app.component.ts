@@ -9,7 +9,7 @@ import { User } from './_models';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todoapp';
+  title = 'eatmeapp';
   currentUser: User;
 
   constructor(
