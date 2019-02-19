@@ -1,0 +1,9 @@
+<table>
+  <tr *ngFor="let menu of menus">
+    <td>{{menu.name}}</td>
+    <td>{{menu.price}}</td>
+    <td>{{menu.description}}</td>
+    <td>{{menu.serveTime}}</td>
+    <td><button (click)="delete(menu.id)">del</button></td>
+  </tr>
+</table>
