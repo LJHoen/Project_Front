@@ -40,15 +40,14 @@ export class RegisterComponent implements OnInit {
   // convenience getter for easy access to form fields
   get f() { return this.registerForm.controls; }
 
-  onSubmit() {
+  onSubmit(type: number) {
     this.submitted = true;
-    const buttonName = document.activeElement.getAttribute('Name');
 
     // stop here if form is invalid
     if (this.registerForm.invalid) {
       return;
     }
-    if (buttonName === 'chef') {
+    if (type === 1 ) {
       this.loading = true;
         this.chefService.register(this.registerForm.value)
           .pipe(first())

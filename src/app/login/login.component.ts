@@ -21,9 +21,9 @@ export class LoginComponent implements OnInit {
     private alertService: AlertService
   ) {
     // redirect to home if already logged in
-/*    if (this.customerAuthService.currentUserValue || this.chefAuthService.currentUserValue) {
+    if (this.customerAuthService.currentUserValue || this.chefAuthService.currentUserValue) {
       this.router.navigate(['/']);
-    }*/
+    }
   }
 
   ngOnInit() {
@@ -39,9 +39,8 @@ export class LoginComponent implements OnInit {
   // convenience getter for easy access to form fields
   get f() { return this.loginForm.controls; }
 
-  onSubmit() {
+  onSubmit(type: number) {
     this.submitted = true;
-    const buttonName = document.activeElement.getAttribute('Name');
 
     // stop here if form is invalid
     if (this.loginForm.invalid) {
@@ -49,7 +48,7 @@ export class LoginComponent implements OnInit {
     }
 
     this.loading = true;
-    if (buttonName === 'chef') {
+    if (type === 1) {
       this.chefAuthService.login(this.f.username.value, this.f.password.value)
         .pipe(first())
         .subscribe(

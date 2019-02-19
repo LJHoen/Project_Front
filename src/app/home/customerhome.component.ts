@@ -20,6 +20,7 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
   ) {
     this.currentUserSubscription = this.customerAuthService.currentUser.subscribe(user => {
       this.currentUser = user;
+      console.log(user);
     });
   }
 

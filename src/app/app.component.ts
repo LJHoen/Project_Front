@@ -10,7 +10,7 @@ import {Chef, Customer} from './_models';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todoapp';
+  title = 'EAT ME!';
   currentUser1: Chef;
   currentUser2: Customer;
 
@@ -22,7 +22,9 @@ export class AppComponent {
     this.chefAuthService.currentUser.subscribe(x => {
       return this.currentUser1 = x;
     });
-    this.customerAuthService.currentUser.subscribe( y => this.currentUser2 = y);
+    this.customerAuthService.currentUser.subscribe( y => {
+      return this.currentUser2 = y;
+    });
   }
 
   logout() {
