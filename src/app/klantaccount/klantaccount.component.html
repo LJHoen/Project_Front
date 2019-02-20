@@ -1,11 +1,10 @@
+<p>
+  {{currentUser.firstName}}
+  <button routerLink="/login" (click)="customerAuthService.logout()">Logout</button>
+</p>
+
+
 <h1>Hi {{currentUser.firstName}}!</h1>
-
-<div>
-  <br>
-  <button  routerLink="/home" class="btn btn-primary">Home</button>
-  <br>
-</div>
-
 
 <fieldset>
   <legend>Update account settings</legend>
@@ -40,14 +39,13 @@
   <br>
 </div>
 
-<!--- <div *ngIf="currentUse.orders.length > 0"> --->
   <h2>Order history:</h2>
-  <table *ngFor="let order of currentUser.orders">
+<p *ngIf="currentUser.history.length=== 0">You have not ordered anything yet!</p>
+  <table *ngFor="let order of currentUser.history">
     <tr *ngFor="let dish of order">
       <td>{{dish.name}}</td>
       <td>{{dish.price}}</td>
       <td>{{dish.supply}}</td>
     </tr>
   </table>
-<!--- </div> --->
 

@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import {AlertService, ChefAuthService, ChefService, CustomerAuthService, CustomerService} from '../_services';
+import {Order} from '../_models/order';
 
 @Component({templateUrl: 'register.component.html'})
 export class RegisterComponent implements OnInit {
@@ -32,6 +33,10 @@ export class RegisterComponent implements OnInit {
       lastName: ['', Validators.required],
       username: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
+      address: null,
+      bankAccount: null,
+      orders: null,
+      currentOrder: null
     });
 
 

@@ -1,15 +1,14 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { first } from 'rxjs/operators';
-import { User } from '../_models';
+import {Customer} from '../_models';
 import { Dish } from '../_models';
 import { UserService, MenuService, CustomerAuthService } from '../_services';
 
 @Component({ templateUrl: 'customerhome.component.html' })
 export class CustomerHomeComponent implements OnInit, OnDestroy {
-  currentUser: User;
+  currentUser: Customer;
   currentUserSubscription: Subscription;
-  user: User;
   dishes: Dish[] = [];
   dish: Dish;
 
@@ -20,12 +19,12 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
   ) {
     this.currentUserSubscription = this.customerAuthService.currentUser.subscribe(user => {
       this.currentUser = user;
-      console.log(user);
+      console.log(this.currentUser);
     });
+    this.ngOnDestroy();
   }
 
   ngOnInit() {
-    /** this.loadAllUsers(); **/
   }
 
   ngOnDestroy() {
@@ -59,8 +58,8 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
 
   addDish(id: number) {
     this.menuService.getById(id).pipe(first()).subscribe( dish => {
-      // this.currentUser.order.dishes.push(dish);
-      // this.currentUser.order.price += dish.price;
+       this.currentUser.currentOrder.dishes.push(dish);
+       this.currentUser.currentOrder.price += dish.price;
     });
   }
 

@@ -1,18 +1,19 @@
-<div>
-  <br>
-  <button  routerLink="/home" class="btn btn-primary">Home</button>
-  <br>
-</div>
+<p>
+  {{currentUser.firstName}}
+  <button routerLink="/login" (click)="customerAuthService.logout()">Logout</button>
+</p>
 
 <fieldset>
 <ul>
   <h3>Your ordered items:</h3>
-  <li *ngFor="let dish of currentUser.order">
-    {{dish.name}} ({{dish.price}}{{dish.time}})
+  <div *ngIf="currentUser.currentOrder != null">
+  <li  *ngFor="let dish of currentUser.currentOrder.dishes">
+    {{dish.name}} ({{dish.price}} {{dish.time}})
   </li>
   <li>
     {{currentUser.order.price}}
   </li>
+  </div>
 </ul>
 
 <div>

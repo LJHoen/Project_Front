@@ -8,6 +8,5 @@ export class User {
   lastName: string;
   address: string;
   bankAccount: string;
-  orders: Order[];
   token: string;
 }

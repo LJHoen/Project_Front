@@ -1,5 +1,13 @@
+<p>
+  {{currentUser.firstName}}
+  <button routerLink="/login" (click)="customerAuthService.logout()">Logout</button>
+</p>
+
+
 <h1>Welcome to EAT ME!!</h1>
 <h3>All available dishes:</h3>
+
+
 <ul>
   <li *ngFor="let dish of dishes">
     {{dish.name}} ({{dish.price}} {{dish.time}} {{dish.supply}})
@@ -7,7 +15,7 @@
   </li>
 </ul>
 
-
+<p>
 <button routerLink="/shoppingcart" class="btn btn-primary">Shopping Cart</button>
-
 <button routerLink="/klantaccount" class="btn btn-primary">Account</button>
+</p>

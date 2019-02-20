@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Router} from '@angular/router';
 
 import { Customer } from '../_models';
 
@@ -9,6 +10,7 @@ import { Customer } from '../_models';
 export class CustomerAuthService {
   private currentUserSubject: BehaviorSubject<Customer>;
   public currentUser: Observable<Customer>;
+  private router: Router;
 
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<Customer>(JSON.parse(localStorage.getItem('currentUser')));
