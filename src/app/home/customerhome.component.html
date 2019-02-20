@@ -7,15 +7,22 @@
 <h1>Welcome to EAT ME!!</h1>
 <h3>All available dishes:</h3>
 
+<!--<ul>-->
+  <!--<li *ngFor="let dish of dishes">-->
+    <!--{{dish.name}} ({{dish.price}} {{dish.time}} {{dish.supply}})-->
+    <!--<button (click)="addDish(dish.id)" class="btn btn-primary">Add</button>-->
+  <!--</li>-->
 
-<ul>
-  <li *ngFor="let dish of dishes">
-    {{dish.name}} ({{dish.price}} {{dish.time}} {{dish.supply}})
-    <button (click)="addDish(dish.id)" class="btn btn-primary">Add</button>
-  </li>
-</ul>
+<app-menu-list></app-menu-list>
+<tr *ngFor="let menu of menus">
+  <td>{{menu.name}}</td>
+  <td>{{menu.price}}</td>
+  <td>{{menu.description}}</td>
+  <td>{{menu.serveTime}}</td>
+  <td><button (click)="addDish(dish.id)" class="btn btn-primary">Add</button></td>
+</tr>
 
-<p>
+
 <button routerLink="/shoppingcart" class="btn btn-primary">Shopping Cart</button>
 <button routerLink="/klantaccount" class="btn btn-primary">Account</button>
-</p>
+

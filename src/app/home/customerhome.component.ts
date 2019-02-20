@@ -4,6 +4,7 @@ import { first } from 'rxjs/operators';
 import {Customer} from '../_models';
 import { Dish } from '../_models';
 import { UserService, MenuService, CustomerAuthService } from '../_services';
+import {Menu} from '../Menu';
 
 @Component({ templateUrl: 'customerhome.component.html' })
 export class CustomerHomeComponent implements OnInit, OnDestroy {
@@ -11,6 +12,7 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
   currentUserSubscription: Subscription;
   dishes: Dish[] = [];
   dish: Dish;
+  menus: Menu[];
 
   constructor(
     private customerAuthService: CustomerAuthService,

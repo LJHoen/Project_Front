@@ -15,6 +15,9 @@ import { fakeBackendProvider } from './_helpers';
 
 
 import { routing } from './app.routing';
+
+import { ChefHomeComponent } from './chef-home/chef-home.component';
+import { MenuListComponent } from './menu-list/menu-list.component';
 import { KlantAccountComponent } from './klantaccount/klantaccount.component';
 import { ShoppingCartComponent } from './shoppingcart/shoppingcart.component';
 
@@ -23,6 +26,9 @@ import { ShoppingCartComponent } from './shoppingcart/shoppingcart.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    AlertComponent,
+    ChefHomeComponent,
+    MenuListComponent,
     CustomerHomeComponent,
     AlertComponent,
     KlantAccountComponent,
