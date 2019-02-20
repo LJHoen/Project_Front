@@ -5,12 +5,11 @@ import {Menu} from '../Menu';
 import {MenuListComponent} from '../menu-list/menu-list.component';
 
 
-
 @Component({
   selector: 'app-chef-home',
   templateUrl: './chef-home.component.html',
   styleUrls: ['./chef-home.component.css'],
-  providers:  [MenuService]
+  providers:  [MenuService],
 })
 
 @NgModule({
@@ -38,7 +37,7 @@ export class ChefHomeComponent implements OnInit {
     const description = this.chefHome.controls['description'].value;
     const serveTime = this.chefHome.controls['serveTime'].value;
     this.menuService.saveMenu(new Menu(0, name, price, description, serveTime)).subscribe(
-      //  () => this.menuList.getAllMenus()
+    //    () => this.menuList.getAllMenus()
     );
   }
 }

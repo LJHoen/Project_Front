@@ -1,17 +1,16 @@
 <div>
   <h1>Welcome Chef Hevar</h1>
 </div>
-<div>
-  <h3>Voeg hieronder uw nieuwe gerechten toe!</h3>
-</div>
+<fieldset>
+  <legend>Voeg hieronder uw nieuwe gerechten toe!</legend>
 <div>
   <form [formGroup]="chefHome" (ngSubmit)="saveMenu($event)">
-  <input formControlName="name" type="text" placeholder="Naam gerecht">
-    <input formControlName="price" type="number" placeholder="Prijs">
-  <input formControlName="description" type="text" placeholder="Omschrijving">
-  <input formControlName="serveTime" type="text" placeholder="Serveertijd">
-  <button type="submit">Save</button>
+    <p><input formControlName="name" type="text" placeholder="Naam gerecht"></p>
+    <p><input formControlName="price" type="number" placeholder="Prijs"></p>
+    <p><input formControlName="description" type="text" placeholder="Omschrijving"></p>
+    <p><input formControlName="serveTime" type="text" placeholder="Serveertijd"></p>
+    <p><button type="submit" >Opslaan</button></p>
   </form>
 </div>
+</fieldset>
 <app-menu-list></app-menu-list>
-

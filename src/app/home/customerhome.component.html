@@ -1,12 +1,18 @@
 <h1>Welcome to EAT ME!!</h1>
 <h3>All available dishes:</h3>
-<ul>
-  <li *ngFor="let dish of dishes">
-    {{dish.name}} ({{dish.price}} {{dish.time}} {{dish.supply}})
-    <button (click)="addDish(dish.id)" class="btn btn-primary">Add</button>
-  </li>
-</ul>
-
+<!--<ul>-->
+  <!--<li *ngFor="let dish of dishes">-->
+    <!--{{dish.name}} ({{dish.price}} {{dish.time}} {{dish.supply}})-->
+    <!--<button (click)="addDish(dish.id)" class="btn btn-primary">Add</button>-->
+  <!--</li>-->
+<app-menu-list></app-menu-list>
+<tr *ngFor="let menu of menus">
+  <td>{{menu.name}}</td>
+  <td>{{menu.price}}</td>
+  <td>{{menu.description}}</td>
+  <td>{{menu.serveTime}}</td>
+  <td><button (click)="addDish(dish.id)" class="btn btn-primary">Add</button></td>
+</tr>
 
 <button routerLink="/shoppingcart" class="btn btn-primary">Shopping Cart</button>
 
