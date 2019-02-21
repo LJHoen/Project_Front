@@ -1,6 +1,9 @@
-<div>
-  <h1>Welcome Chef Hevar</h1>
-</div>
+<p>
+  {{currentUser.firstName}}
+  <button routerLink="/login" (click)="chefAuthService.logout()">Logout</button>
+</p>
+
+
 <fieldset>
   <legend>Voeg hieronder uw nieuwe gerechten toe!</legend>
 <div>
@@ -13,4 +16,4 @@
   </form>
 </div>
 </fieldset>
-<app-menu-list></app-menu-list>
+<!--- <app-menu-list></app-menu-list> --->

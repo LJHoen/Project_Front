@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { first } from 'rxjs/operators';
-import {Customer} from '../_models';
+import {Chef, Customer} from '../_models';
 import { Dish } from '../_models';
-import { UserService, MenuService, CustomerAuthService } from '../_services';
+import {ChefService, CustomerAuthService, CustomerService} from '../_services';
 import {Menu} from '../Menu';
 
 @Component({ templateUrl: 'customerhome.component.html' })
@@ -13,17 +13,19 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
   dishes: Dish[] = [];
   dish: Dish;
   menus: Menu[];
+  chefs: Chef[];
 
   constructor(
     private customerAuthService: CustomerAuthService,
-    private userService: UserService,
-    private menuService: MenuService
+    private customerService: CustomerService,
+    private chefService: ChefService
   ) {
     this.currentUserSubscription = this.customerAuthService.currentUser.subscribe(user => {
       this.currentUser = user;
       console.log(this.currentUser);
     });
     this.ngOnDestroy();
+    this.loadAllChefs();
   }
 
   ngOnInit() {
@@ -39,19 +41,19 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
       this.loadAllUsers();
     });
   }
-
-  private loadAllUsers() {
-    this.userService.getAll().pipe(first()).subscribe(users => {
-      this.users = users;
+**/
+  private loadAllChefs() {
+    this.chefService.getAll().pipe(first()).subscribe(chefs => {
+      this.chefs = chefs;
     });
   }
-
+/**
   deleteDish(id: number) {
     this.menuService.delete(id).pipe(first()).subscribe(() => {
       this.loadAllAvailableDishes();
     });
   }
-**/
+
   private loadAllAvailableDishes() {
     this.menuService.getAllAvailable().pipe(first()).subscribe(dishes => {
       this.dishes = dishes;
@@ -64,6 +66,6 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
        this.currentUser.currentOrder.price += dish.price;
     });
   }
-
+ **/
 
 }

@@ -36,7 +36,10 @@ export class RegisterComponent implements OnInit {
       address: null,
       bankAccount: null,
       orders: null,
-      currentOrder: null
+      currentOrder: null,
+      menu: null,
+      rating: null,
+      votes: null,
     });
 
 

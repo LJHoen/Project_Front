@@ -16,8 +16,6 @@ const appRoutes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'chef-home', component: ChefHomeComponent},
   {path: 'klantaccount', component: KlantAccountComponent },
- // {path: 'chefaccount', component: ChefAccountComponent },
-  // {path: 'chefhome', component: ChefHomeComponent },
   {path: 'shoppingcart', component: ShoppingCartComponent },
   {path: 'customerhome', component: CustomerHomeComponent },
   // otherwise redirect to home
