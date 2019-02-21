@@ -2,7 +2,6 @@ import {Component, Input, NgModule, OnInit, OnDestroy} from '@angular/core';
 import {MenuService} from '../menu.service';
 import {ChefService} from '../_services';
 import {FormBuilder, Validators} from '@angular/forms';
-import {Menu} from '../Menu';
 import {MenuListComponent} from '../menu-list/menu-list.component';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ChefAuthService} from '../_services';
@@ -61,15 +60,8 @@ export class ChefHomeComponent implements OnInit, OnDestroy {
     const price = this.chefHome.controls['price'].value;
     const description = this.chefHome.controls['description'].value;
     const serveTime = this.chefHome.controls['serveTime'].value;
-    console.log(this.dish);
-    console.log(this.currentUser);
-    console.log('breaktest');
     this.currentUser.dishes.push(new Dish(0, name, price, description, serveTime, false));
-    console.log('dishes:');
-    console.log(this.currentUser.dishes);
-    console.log('test4');
     this.chefService.update(this.currentUser).subscribe();
-    console.log('test5');
 
   }
 

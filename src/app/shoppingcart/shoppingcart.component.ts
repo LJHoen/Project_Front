@@ -3,6 +3,7 @@ import {CustomerAuthService, MenuService, CustomerService} from '../_services';
 import { Router, ActivatedRoute } from '@angular/router';
 import {Customer, Dish, User} from '../_models';
 import {Subscription} from 'rxjs';
+import {forEach} from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-shoppingcart',
@@ -12,18 +13,21 @@ import {Subscription} from 'rxjs';
 export class ShoppingCartComponent implements OnInit, OnDestroy {
   currentUser: Customer;
   currentUserSubscription: Subscription;
+  totalSum: number;
 
   constructor(
     private customerAuthService: CustomerAuthService,
     private customerService: CustomerService,
     private menuService: MenuService,
-    private router: Router
+    private router: Router,
+
   ) {
     this.currentUserSubscription = this.customerAuthService.currentUser.subscribe(user => {
       this.currentUser = user;
     });
     console.log(this.currentUser);
     this.ngOnDestroy();
+    this.totalSum = this.updatePrice();
   }
 
   ngOnInit() {
@@ -41,5 +45,11 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
     this.router.navigate(['./customerhome']);
   }
 
-
+  updatePrice() {
+    let  totalSum  = 0;
+    this.currentUser.currentOrder.forEach(dish => {
+      totalSum = totalSum + parseInt(dish.price.toString(), 10);
+    });
+    return totalSum;
+  }
 }

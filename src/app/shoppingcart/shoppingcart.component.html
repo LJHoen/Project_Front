@@ -6,25 +6,22 @@
 <fieldset>
 <ul>
   <h3>Your ordered items:</h3>
-  <div *ngIf="currentUser.currentOrder != null">
-  <li  *ngFor="let dish of currentUser.currentOrder.dishes">
-    {{dish.name}} ({{dish.price}} {{dish.time}})
+  <div *ngIf="currentUser.currentOrder.length > 0">
+  <li  *ngFor="let dish of currentUser.currentOrder" >
+    {{dish.name}} ({{dish.price}} {{dish.description}} {{dish.serveTime}})
+
   </li>
-  <li>
-    {{currentUser.order.price}}
-  </li>
+    <p>Total sum: {{totalSum}}</p>
   </div>
 </ul>
 
 <div>
-  <br>
   <button (ngSubmit)="onSubmit()">Checkout</button>
-  <br>
 </div>
 </fieldset>
 
 <div>
   <br>
-  <button  routerLink="/home" class="btn btn-primary">Home</button>
+  <button  routerLink="/customerhome" class="btn btn-primary">Home</button>
   <br>
 </div>

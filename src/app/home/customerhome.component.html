@@ -7,10 +7,10 @@
 <h1>Welcome to EAT ME!!</h1>
 <h3>All available dishes:</h3>
 <div *ngFor="let chef of chefs">
-  <tr *ngFor="let dish of chef.menu">
-    <td >{{dish.name}} {{dish.price}} {{dish.serveTime}}</td>
+  <tr *ngFor="let dish of chef.dishes">
+    <td >{{dish.name}} {{dish.price}} {{dish.description}} {{dish.serveTime}}</td>
     <!--<td *ngIf="dish.listed">{{dish.name}} {{dish.price}} {{dish.serveTime}}</td>-->
-    <button (click)="addDish(dish.id)" class="btn btn-primary">Add</button>
+    <button (click)="addDish(dish)" class="btn btn-primary">Add</button>
   </tr>
 </div>
 

@@ -4,15 +4,13 @@ import { first } from 'rxjs/operators';
 import {Chef, Customer} from '../_models';
 import { Dish } from '../_models';
 import {ChefService, CustomerAuthService, CustomerService} from '../_services';
-import {Menu} from '../Menu';
+// import {Menu} from '../Menu';
 
 @Component({ templateUrl: 'customerhome.component.html' })
 export class CustomerHomeComponent implements OnInit, OnDestroy {
   currentUser: Customer;
   currentUserSubscription: Subscription;
-  dishes: Dish[] = [];
   dish: Dish;
-  menus: Menu[];
   chefs: Chef[];
 
   constructor(
@@ -35,13 +33,6 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
     // unsubscribe to ensure no memory leaks
     this.currentUserSubscription.unsubscribe();
   }
-/**
-  deleteUser(id: number) {
-    this.userService.delete(id).pipe(first()).subscribe(() => {
-      this.loadAllUsers();
-    });
-  }
-**/
 
   private loadAllChefs() {
     this.chefService.getAll().pipe(first()).subscribe(chefs => {
@@ -49,25 +40,12 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
       console.log(chefs);
     });
   }
-/**
-  deleteDish(id: number) {
-    this.menuService.delete(id).pipe(first()).subscribe(() => {
-      this.loadAllAvailableDishes();
-    });
-  }
 
-  private loadAllAvailableDishes() {
-    this.menuService.getAllAvailable().pipe(first()).subscribe(dishes => {
-      this.dishes = dishes;
-    });
+  addDish(dish) {
+    console.log(this.currentUser);
+    this.currentUser.currentOrder.push(dish);
+    console.log(this.currentUser.currentOrder);
+    this.customerService.update(this.currentUser);
   }
-
-  addDish(id: number) {
-    this.menuService.getById(id).pipe(first()).subscribe( dish => {
-       this.currentUser.currentOrder.dishes.push(dish);
-       this.currentUser.currentOrder.price += dish.price;
-    });
-  }
- **/
 
 }

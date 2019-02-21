@@ -1,5 +1,6 @@
 import {User} from './user';
 import {Order} from './order';
+import {Dish} from './dish';
 
 export class Customer extends User {
   id: number;
@@ -7,7 +8,7 @@ export class Customer extends User {
   password: string;
   firstName: string;
   lastName: string;
-  currentOrder: Order = new Order();
-  history: Order[];
+  currentOrder: Dish[] = [];
+  history: Dish[][] = [];
   token: string;
 }
