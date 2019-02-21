@@ -25,7 +25,7 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
       console.log(this.currentUser);
     });
     this.ngOnDestroy();
-    this.loadAllChefs();
+     this.loadAllChefs();
   }
 
   ngOnInit() {
@@ -42,9 +42,11 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
     });
   }
 **/
+
   private loadAllChefs() {
     this.chefService.getAll().pipe(first()).subscribe(chefs => {
       this.chefs = chefs;
+      console.log(chefs);
     });
   }
 /**

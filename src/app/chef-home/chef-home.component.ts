@@ -56,23 +56,25 @@ export class ChefHomeComponent implements OnInit, OnDestroy {
   this.currentUserSubscription.unsubscribe();
 }
 
-  public saveMenu(event) {
-    console.log('test');
+  public saveMenu() {
     const name = this.chefHome.controls['name'].value;
     const price = this.chefHome.controls['price'].value;
     const description = this.chefHome.controls['description'].value;
     const serveTime = this.chefHome.controls['serveTime'].value;
-    console.log('test2');
-    this.dish = new Dish(0, name, price, description, serveTime, false);
-    console.log('test3');
     console.log(this.dish);
     console.log(this.currentUser);
-    console.log(this.currentUser.menu);
-    console.log('id in menu: ' + this.currentUser.menu.id);
-    this.currentUser.menu.dishes.push(this.dish);
+    console.log('breaktest');
+    this.currentUser.dishes.push(new Dish(0, name, price, description, serveTime, false));
+    console.log('dishes:');
+    console.log(this.currentUser.dishes);
     console.log('test4');
     this.chefService.update(this.currentUser).subscribe();
     console.log('test5');
 
+  }
+
+  public deleteDish(dish) {
+    this.currentUser.dishes.splice(this.currentUser.dishes.indexOf(dish), 1);
+    this.chefService.update(this.currentUser).subscribe();
   }
 }

@@ -8,7 +8,8 @@
 <h3>All available dishes:</h3>
 <div *ngFor="let chef of chefs">
   <tr *ngFor="let dish of chef.menu">
-    <td *ngIf="dish.listed">{{dish.name}} {{dish.price}} {{dish.serveTime}}</td>
+    <td >{{dish.name}} {{dish.price}} {{dish.serveTime}}</td>
+    <!--<td *ngIf="dish.listed">{{dish.name}} {{dish.price}} {{dish.serveTime}}</td>-->
     <button (click)="addDish(dish.id)" class="btn btn-primary">Add</button>
   </tr>
 </div>

@@ -1,5 +1,5 @@
 import {User} from './user';
-import {Menu} from '../Menu';
+import {Dish} from './dish';
 
 export class Chef extends User {
   id: number;
@@ -7,7 +7,7 @@ export class Chef extends User {
   password: string;
   firstName: string;
   lastName: string;
-  menu: Menu = new Menu();
+  dishes: Dish[] = [];
   rating: string;
   token: string;
 }
