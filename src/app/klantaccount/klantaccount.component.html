@@ -40,12 +40,15 @@
 </div>
 
   <h2>Order history:</h2>
-<p *ngIf="currentUser.history.length=== 0">You have not ordered anything yet!</p>
-  <table *ngFor="let order of currentUser.history">
+<p *ngIf="this.currentUser.history.length=== 0">You have not ordered anything yet!</p>
+  <table *ngFor="let order of this.currentUser.history">
+    <br>
+    <h3>Order {{this.currentUser.history.indexOf(order)+1}}</h3>
     <tr *ngFor="let dish of order">
       <td>{{dish.name}}</td>
       <td>{{dish.price}}</td>
-      <td>{{dish.supply}}</td>
+      <td>{{dish.description}}</td>
+      <td>{{dish.serveTime}}</td>
     </tr>
   </table>
 

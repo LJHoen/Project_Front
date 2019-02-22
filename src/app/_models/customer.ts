@@ -1,14 +1,18 @@
 import {User} from './user';
-import {Order} from './order';
 import {Dish} from './dish';
 
 export class Customer extends User {
-  id: number;
-  username: string;
-  password: string;
-  firstName: string;
-  lastName: string;
   currentOrder: Dish[] = [];
   history: Dish[][] = [];
-  token: string;
+
+/*
+  constructor(id: string, username: string, password: string, firstName: string, lastName: string,
+              address: string, bankAccount: string, token: string, currentOrder: Dish[], history: Dish[][]) {
+    super(id, username, password, firstName, lastName, address, bankAccount, token);
+    this.currentOrder = currentOrder;
+    this.history = history;
+
+  }
+*/
+
 }

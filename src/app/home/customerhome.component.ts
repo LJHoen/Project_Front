@@ -45,7 +45,8 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
     console.log(this.currentUser);
     this.currentUser.currentOrder.push(dish);
     console.log(this.currentUser.currentOrder);
-    this.customerService.update(this.currentUser);
+    this.customerService.update(this.currentUser).subscribe();
+    console.log('home test');
   }
 
 }

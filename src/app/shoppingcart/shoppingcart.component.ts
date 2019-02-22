@@ -39,10 +39,14 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
+    console.log('test1');
     this.currentUser.history.push(this.currentUser.currentOrder);
-    this.currentUser.currentOrder = null;
-    this.customerService.update(this.currentUser);
-    this.router.navigate(['./customerhome']);
+    console.log('test2');
+    console.log(this.currentUser.history);
+    this.currentUser.currentOrder = [];
+    this.customerService.update(this.currentUser).subscribe();
+    console.log('test3');
+    // this.router.navigate(['./customerhome']);
   }
 
   updatePrice() {

@@ -10,7 +10,7 @@ import {ActivatedRoute, Router} from '@angular/router';
   templateUrl: './klantaccount.component.html',
   styleUrls: ['./klantaccount.component.css']
 })
-export class KlantAccountComponent implements OnInit, OnDestroy {
+export class KlantAccountComponent implements OnDestroy {
   currentUser: Customer;
   currentUserSubscription: Subscription;
   detailsForm: FormGroup;
@@ -33,6 +33,7 @@ export class KlantAccountComponent implements OnInit, OnDestroy {
     // unsubscribe to ensure no memory leaks
     this.currentUserSubscription.unsubscribe();
   }
+/*
 
   ngOnInit() {
     this.detailsForm = this.formBuilder.group({
@@ -44,6 +45,7 @@ export class KlantAccountComponent implements OnInit, OnDestroy {
       history: this.currentUser.history
     });
   }
+*/
 
 
 
