@@ -45,11 +45,12 @@
     <br>
     <h3>Bestelling {{this.currentUser.history.indexOf(order)+1}}</h3>
     <tr *ngFor="let dish of order.dishes">
-      <td>{{dish.name}}</td>
-      <td>{{dish.price}}</td>
-      <td>{{dish.description}}</td>
-      <td>{{dish.serveTime}}</td>
-      <td>{{order.dishCount[order.dishes.indexOf(dish)]}}</td>
+      <td>Name: {{dish.name}}</td>
+      <td>Price: {{dish.price}}</td>
+      <td>Description: {{dish.description}}</td>
+      <td>Time: {{dish.serveTime}}</td>
+      <br>
+      <td>Amount{{order.dishCount[order.dishes.indexOf(dish)]}}</td>
     </tr>
   </table>
 

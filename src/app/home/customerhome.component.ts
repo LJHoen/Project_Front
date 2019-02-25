@@ -17,12 +17,8 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
     private customerService: CustomerService,
     private chefService: ChefService
   ) {
-    this.currentUserSubscription = this.customerAuthService.currentUser.subscribe(user => {
-      this.currentUser = user;
-      console.log(this.currentUser);
-    });
-    this.ngOnDestroy();
-     this.loadAllChefs();
+    this.reloadUser();
+    this.loadAllChefs();
   }
 
   ngOnInit() {
@@ -50,16 +46,21 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
       this.currentUser.currentBestelling.dishCount.push(1);
     }
     this.currentUser.currentBestelling.price = this.updatePrice();
-    console.log(this.currentUser.currentBestelling);
-    console.log('home test');
   }
 
   updatePrice() {
     let  totalSum  = 0;
     this.currentUser.currentBestelling.dishes.forEach(dish => {
-      totalSum = totalSum + parseInt(dish.price.toString(), 10);
+      totalSum = totalSum + parseInt(dish.price.toString(), 10)*this.currentUser.currentBestelling.dishCount[
+        this.currentUser.currentBestelling.dishes.indexOf(dish)];
+      console.log(totalSum);
     });
     return totalSum;
 
   }
+
+  reloadUser() {
+    this.currentUserSubscription = this.customerAuthService.currentUser.subscribe(user => {
+      this.currentUser = user;
+    }); }
 }

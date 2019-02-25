@@ -21,11 +21,7 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
     private router: Router,
 
   ) {
-    this.currentUserSubscription = this.customerAuthService.currentUser.subscribe(user => {
-      this.currentUser = user;
-    });
-    console.log(this.currentUser);
-    this.ngOnDestroy();
+    this.reloadUser();
   }
 
   ngOnInit() {
@@ -37,13 +33,15 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    console.log('test1');
     this.currentUser.history.push(this.currentUser.currentBestelling);
-    console.log('test2');
-    console.log(this.currentUser.history);
     this.currentUser.currentBestelling = new Bestelling(0, [], [], 0);
     this.customerService.update(this.currentUser).subscribe();
-    console.log('test3');
     this.router.navigate(['./customerhome']);
+    this.reloadUser();
   }
+
+  reloadUser() {
+    this.currentUserSubscription = this.customerAuthService.currentUser.subscribe(user => {
+      this.currentUser = user;
+    }); }
 }

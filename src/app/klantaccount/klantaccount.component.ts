@@ -13,7 +13,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class KlantAccountComponent implements OnDestroy {
   currentUser: Customer;
   currentUserSubscription: Subscription;
-  detailsForm: FormGroup;
+  dude: Customer;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -22,11 +22,7 @@ export class KlantAccountComponent implements OnDestroy {
     private customerAuthService: CustomerAuthService,
     private customerService: CustomerService,
   ) {
-    this.currentUserSubscription = this.customerAuthService.currentUser.subscribe(user => {
-      this.currentUser = user;
-    });
-    this.ngOnDestroy();
-    console.log(this.currentUser);
+    this.reloadUser();
   }
 
   ngOnDestroy() {
@@ -34,8 +30,13 @@ export class KlantAccountComponent implements OnDestroy {
     this.currentUserSubscription.unsubscribe();
   }
 
+  reloadUser() {
+    this.currentUserSubscription = this.customerAuthService.currentUser.subscribe(user => {
+      this.currentUser = user;
+    }); }
+
 updateUser() {
-    if((<HTMLInputElement>document.getElementById('firstName')).value !== '') {
+    if ((<HTMLInputElement>document.getElementById('firstName')).value !== '') {
       this.currentUser.firstName = (<HTMLInputElement>document.getElementById('firstName')).value; }
     if ((<HTMLInputElement>document.getElementById('lastName')).value !== '') {
       this.currentUser.lastName = (<HTMLInputElement>document.getElementById('lastName')).value; }
@@ -45,6 +46,8 @@ updateUser() {
       this.currentUser.address = (<HTMLInputElement>document.getElementById('address')).value; }
     if ((<HTMLInputElement>document.getElementById('bank')).value !== '') {
       this.currentUser.bankAccount = (<HTMLInputElement>document.getElementById('bank')).value; }
+    this.customerService.update(this.currentUser).subscribe();
+    this.reloadUser();
 }
 
 
