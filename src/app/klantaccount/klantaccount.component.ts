@@ -33,19 +33,19 @@ export class KlantAccountComponent implements OnDestroy {
     // unsubscribe to ensure no memory leaks
     this.currentUserSubscription.unsubscribe();
   }
-/*
 
-  ngOnInit() {
-    this.detailsForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required],
-      password2: ['', Validators.required],
-      address: ['', Validators.required],
-      bankAccount: ['', Validators.required],
-      history: this.currentUser.history
-    });
-  }
-*/
+updateUser() {
+    if((<HTMLInputElement>document.getElementById('firstName')).value !== '') {
+      this.currentUser.firstName = (<HTMLInputElement>document.getElementById('firstName')).value; }
+    if ((<HTMLInputElement>document.getElementById('lastName')).value !== '') {
+      this.currentUser.lastName = (<HTMLInputElement>document.getElementById('lastName')).value; }
+    if ((<HTMLInputElement>document.getElementById('password')).value !== '') {
+      this.currentUser.password = (<HTMLInputElement>document.getElementById('password')).value; }
+    if ((<HTMLInputElement>document.getElementById('address')).value !== '') {
+      this.currentUser.address = (<HTMLInputElement>document.getElementById('address')).value; }
+    if ((<HTMLInputElement>document.getElementById('bank')).value !== '') {
+      this.currentUser.bankAccount = (<HTMLInputElement>document.getElementById('bank')).value; }
+}
 
 
 

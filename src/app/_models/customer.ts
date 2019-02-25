@@ -1,9 +1,9 @@
 import {User} from './user';
-import {Dish} from './dish';
+import {Bestelling} from './bestelling';
 
 export class Customer extends User {
-  currentOrder: Dish[] = [];
-  history: Dish[][] = [];
+  currentBestelling: Bestelling;
+  history: Bestelling[] = [];
 
 /*
   constructor(id: string, username: string, password: string, firstName: string, lastName: string,

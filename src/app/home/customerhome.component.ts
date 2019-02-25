@@ -1,10 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { first } from 'rxjs/operators';
-import {Chef, Customer} from '../_models';
+import {Chef, Customer, Bestelling} from '../_models';
 import { Dish } from '../_models';
 import {ChefService, CustomerAuthService, CustomerService} from '../_services';
-// import {Menu} from '../Menu';
 
 @Component({ templateUrl: 'customerhome.component.html' })
 export class CustomerHomeComponent implements OnInit, OnDestroy {
@@ -37,16 +36,30 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
   private loadAllChefs() {
     this.chefService.getAll().pipe(first()).subscribe(chefs => {
       this.chefs = chefs;
-      console.log(chefs);
     });
   }
 
   addDish(dish) {
+    if (this.currentUser.currentBestelling === null) { this.currentUser.currentBestelling = new Bestelling(0, [], [], 0); }
     console.log(this.currentUser);
-    this.currentUser.currentOrder.push(dish);
-    console.log(this.currentUser.currentOrder);
-    this.customerService.update(this.currentUser).subscribe();
+    let increment = 1;
+    if (this.currentUser.currentBestelling.dishes.includes(dish, 0)) {
+      this.currentUser.currentBestelling.dishCount[this.currentUser.currentBestelling.dishes.indexOf(dish)] += increment;
+    } else {
+      this.currentUser.currentBestelling.dishes.push(dish);
+      this.currentUser.currentBestelling.dishCount.push(1);
+    }
+    this.currentUser.currentBestelling.price = this.updatePrice();
+    console.log(this.currentUser.currentBestelling);
     console.log('home test');
   }
 
+  updatePrice() {
+    let  totalSum  = 0;
+    this.currentUser.currentBestelling.dishes.forEach(dish => {
+      totalSum = totalSum + parseInt(dish.price.toString(), 10);
+    });
+    return totalSum;
+
+  }
 }

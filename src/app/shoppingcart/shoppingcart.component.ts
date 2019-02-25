@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {CustomerAuthService, MenuService, CustomerService} from '../_services';
 import { Router, ActivatedRoute } from '@angular/router';
-import {Customer, Dish, User} from '../_models';
+import {Bestelling, Customer, Dish, User} from '../_models';
 import {Subscription} from 'rxjs';
 import {forEach} from '@angular/router/src/utils/collection';
 
@@ -13,7 +13,6 @@ import {forEach} from '@angular/router/src/utils/collection';
 export class ShoppingCartComponent implements OnInit, OnDestroy {
   currentUser: Customer;
   currentUserSubscription: Subscription;
-  totalSum: number;
 
   constructor(
     private customerAuthService: CustomerAuthService,
@@ -27,7 +26,6 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
     });
     console.log(this.currentUser);
     this.ngOnDestroy();
-    this.totalSum = this.updatePrice();
   }
 
   ngOnInit() {
@@ -40,20 +38,12 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
 
   onSubmit() {
     console.log('test1');
-    this.currentUser.history.push(this.currentUser.currentOrder);
+    this.currentUser.history.push(this.currentUser.currentBestelling);
     console.log('test2');
     console.log(this.currentUser.history);
-    this.currentUser.currentOrder = [];
+    this.currentUser.currentBestelling = new Bestelling(0, [], [], 0);
     this.customerService.update(this.currentUser).subscribe();
     console.log('test3');
-    // this.router.navigate(['./customerhome']);
-  }
-
-  updatePrice() {
-    let  totalSum  = 0;
-    this.currentUser.currentOrder.forEach(dish => {
-      totalSum = totalSum + parseInt(dish.price.toString(), 10);
-    });
-    return totalSum;
+    this.router.navigate(['./customerhome']);
   }
 }

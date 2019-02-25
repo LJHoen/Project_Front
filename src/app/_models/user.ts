@@ -1,4 +1,4 @@
-import {Order} from './order';
+import {Bestelling} from './bestelling';
 
 export class User {
   id: string;

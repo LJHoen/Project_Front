@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Chef } from '../_models';
 
-
 @Injectable({ providedIn: 'root' })
 export class ChefService {
   constructor(private http: HttpClient) { }

@@ -60,7 +60,7 @@ export class ChefHomeComponent implements OnInit, OnDestroy {
     const price = this.chefHome.controls['price'].value;
     const description = this.chefHome.controls['description'].value;
     const serveTime = this.chefHome.controls['serveTime'].value;
-    this.currentUser.dishes.push(new Dish(0, name, price, description, serveTime, false));
+    this.currentUser.dishes.push(new Dish(0, name, price, description, serveTime, false, this.currentUser.id));
     this.chefService.update(this.currentUser).subscribe();
 
   }
