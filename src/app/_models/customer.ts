@@ -7,6 +7,7 @@ export class Customer extends User {
   password: string;
   firstName: string;
   lastName: string;
-  currentOrder: Order;
+  currentOrder: Order = new Order();
+  history: Order[];
   token: string;
 }

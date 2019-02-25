@@ -1,10 +1,18 @@
+<p>
+  {{currentUser.firstName}}
+  <button routerLink="/login" (click)="customerAuthService.logout()">Logout</button>
+</p>
+
+
 <h1>Welcome to EAT ME!!</h1>
 <h3>All available dishes:</h3>
+
 <!--<ul>-->
   <!--<li *ngFor="let dish of dishes">-->
     <!--{{dish.name}} ({{dish.price}} {{dish.time}} {{dish.supply}})-->
     <!--<button (click)="addDish(dish.id)" class="btn btn-primary">Add</button>-->
   <!--</li>-->
+
 <app-menu-list></app-menu-list>
 <tr *ngFor="let menu of menus">
   <td>{{menu.name}}</td>
@@ -14,6 +22,7 @@
   <td><button (click)="addDish(dish.id)" class="btn btn-primary">Add</button></td>
 </tr>
 
-<button routerLink="/shoppingcart" class="btn btn-primary">Shopping Cart</button>
 
+<button routerLink="/shoppingcart" class="btn btn-primary">Shopping Cart</button>
 <button routerLink="/klantaccount" class="btn btn-primary">Account</button>
+

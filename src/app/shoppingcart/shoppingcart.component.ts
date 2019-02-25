@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import {CustomerAuthService, MenuService, CustomerService} from '../_services';
 import { Router, ActivatedRoute } from '@angular/router';
 import {Customer, Dish, User} from '../_models';
@@ -9,7 +9,7 @@ import {Subscription} from 'rxjs';
   templateUrl: './shoppingcart.component.html',
   styleUrls: ['./shoppingcart.component.css']
 })
-export class ShoppingCartComponent implements OnInit {
+export class ShoppingCartComponent implements OnInit, OnDestroy {
   currentUser: Customer;
   currentUserSubscription: Subscription;
 
@@ -22,13 +22,20 @@ export class ShoppingCartComponent implements OnInit {
     this.currentUserSubscription = this.customerAuthService.currentUser.subscribe(user => {
       this.currentUser = user;
     });
+    console.log(this.currentUser);
+    this.ngOnDestroy();
   }
 
   ngOnInit() {
   }
 
+  ngOnDestroy() {
+    // unsubscribe to ensure no memory leaks
+    this.currentUserSubscription.unsubscribe();
+  }
+
   onSubmit() {
-    this.currentUser.orders.push(this.currentUser.currentOrder);
+    this.currentUser.history.push(this.currentUser.currentOrder);
     this.currentUser.currentOrder = null;
     this.customerService.update(this.currentUser);
     this.router.navigate(['./customerhome']);

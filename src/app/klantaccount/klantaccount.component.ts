@@ -1,18 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import {CustomerAuthService, MenuService, UserService} from '../_services';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import {CustomerAuthService, CustomerService} from '../_services';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {User} from '../_models';
+import {Customer} from '../_models';
 import {Subscription} from 'rxjs';
 import {ActivatedRoute, Router} from '@angular/router';
-import {first} from 'rxjs/operators';
 
 @Component({
   selector: 'app-klantaccount',
   templateUrl: './klantaccount.component.html',
   styleUrls: ['./klantaccount.component.css']
 })
-export class KlantAccountComponent implements OnInit {
-  currentUser: User;
+export class KlantAccountComponent implements OnInit, OnDestroy {
+  currentUser: Customer;
   currentUserSubscription: Subscription;
   detailsForm: FormGroup;
 
@@ -21,11 +20,18 @@ export class KlantAccountComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private customerAuthService: CustomerAuthService,
-    private customerService: UserService,
+    private customerService: CustomerService,
   ) {
     this.currentUserSubscription = this.customerAuthService.currentUser.subscribe(user => {
       this.currentUser = user;
     });
+    this.ngOnDestroy();
+    console.log(this.currentUser);
+  }
+
+  ngOnDestroy() {
+    // unsubscribe to ensure no memory leaks
+    this.currentUserSubscription.unsubscribe();
   }
 
   ngOnInit() {
@@ -34,7 +40,8 @@ export class KlantAccountComponent implements OnInit {
       password: ['', Validators.required],
       password2: ['', Validators.required],
       address: ['', Validators.required],
-      bankAccount: ['', Validators.required]
+      bankAccount: ['', Validators.required],
+      history: this.currentUser.history
     });
   }
 
