@@ -5,7 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { CustomerHomeComponent } from './home/customerhome.component';
+import { CustomerHomeComponent } from './customerhome/customerhome.component';
 import { AlertComponent } from './_components';
 
 /**
@@ -20,6 +20,7 @@ import { ChefHomeComponent } from './chef-home/chef-home.component';
 import { MenuListComponent } from './menu-list/menu-list.component';
 import { KlantAccountComponent } from './klantaccount/klantaccount.component';
 import { ShoppingCartComponent } from './shoppingcart/shoppingcart.component';
+import { ChefAccountComponent } from './chefaccount/chefaccount.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ShoppingCartComponent } from './shoppingcart/shoppingcart.component';
     AlertComponent,
     KlantAccountComponent,
     ShoppingCartComponent,
+    ChefAccountComponent,
   ],
   imports: [
     BrowserModule,

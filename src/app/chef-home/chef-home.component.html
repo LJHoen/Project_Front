@@ -1,8 +1,22 @@
-<div>
-  <h1>Welcome Chef Hevar</h1>
-</div>
+<p>
+  {{currentUser.firstName}}
+  <button routerLink="/login" (click)="chefAuthService.logout()">Logout</button>
+</p>
+
+
+<table>
+  <h2>Bekijk hier jouw gerechten: </h2>
+  <tr *ngFor="let dish of currentUser.dishes">
+    <td>{{dish.name}}</td>
+    <td>{{dish.price}}</td>
+    <td>{{dish.description}}</td>
+    <td>{{dish.serveTime}}</td>
+    <td><button (click)="deleteDish(dish)">del</button></td>
+  </tr>
+</table>
+
 <fieldset>
-  <legend>Voeg hieronder uw nieuwe gerechten toe!</legend>
+  <legend>Voeg hieronder nieuwe gerechten toe!</legend>
 <div>
   <form [formGroup]="chefHome" (ngSubmit)="saveMenu($event)">
     <p><input formControlName="name" type="text" placeholder="Naam gerecht"></p>
@@ -13,4 +27,5 @@
   </form>
 </div>
 </fieldset>
-<app-menu-list></app-menu-list>
+
+<button routerLink="/chefaccount" class="btn btn-primary">Account</button>
