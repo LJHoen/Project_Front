@@ -18,7 +18,7 @@ const appRoutes: Routes = [
   {path: 'klantaccount', component: KlantAccountComponent },
   {path: 'shoppingcart', component: ShoppingCartComponent },
   {path: 'customerhome', component: CustomerHomeComponent },
-  {path: 'chefaccount', component: ChefAccountComponent }
+  {path: 'chefaccount', component: ChefAccountComponent },
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
 ];
