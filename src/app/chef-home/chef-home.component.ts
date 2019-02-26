@@ -36,7 +36,6 @@ export class ChefHomeComponent implements OnInit, OnDestroy {
   this.currentUserSubscription = this.chefAuthService.currentUser.subscribe(user => {
     this.currentUser = user;
   });
-    this.ngOnDestroy();
     console.log(this.currentUser);
   }
 

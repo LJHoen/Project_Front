@@ -25,7 +25,13 @@ export class AppComponent {
     this.customerAuthService.currentUser.subscribe( y => {
       return this.currentUser2 = y;
     });
-    // check account type and redirect based ontype
+    // check account type and redirect based on type
+    if (this.currentUser1 !== null) {
+      this.router.navigate(['/chef-home']);
+    }
+    if (this.currentUser2 !== null) {
+      this.router.navigate(['/customerhome']);
+    }
   }
 
   logout() {

@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     private chefAuthService: ChefAuthService,
     private alertService: AlertService
   ) {
-    // redirect to home if already logged in
+    // redirect to customerhome if already logged in
     if (this.customerAuthService.currentUserValue || this.chefAuthService.currentUserValue) {
       this.router.navigate(['/']);
     }
