@@ -51,9 +51,8 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
   updatePrice() {
     let  totalSum  = 0;
     this.currentUser.currentBestelling.dishes.forEach(dish => {
-      totalSum = totalSum + parseInt(dish.price.toString(), 10)*this.currentUser.currentBestelling.dishCount[
+      totalSum = totalSum + parseInt(dish.price.toString(), 10) * this.currentUser.currentBestelling.dishCount[
         this.currentUser.currentBestelling.dishes.indexOf(dish)];
-      console.log(totalSum);
     });
     return totalSum;
 
