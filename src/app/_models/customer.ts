@@ -1,13 +1,9 @@
 import {User} from './user';
-import {Order} from './order';
+import {Bestelling} from './bestelling';
 
 export class Customer extends User {
-  id: number;
-  username: string;
-  password: string;
-  firstName: string;
-  lastName: string;
-  currentOrder: Order = new Order();
-  history: Order[];
-  token: string;
-}
+
+  currentBestelling: Bestelling;
+  history: Bestelling[] = [];
+  }
+

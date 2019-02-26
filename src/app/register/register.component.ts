@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import {AlertService, ChefAuthService, ChefService, CustomerAuthService, CustomerService} from '../_services';
-import {Order} from '../_models/order';
+import {Bestelling} from '../_models/bestelling';
 
 @Component({templateUrl: 'register.component.html'})
 export class RegisterComponent implements OnInit {
@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
     private customerService: CustomerService,
     private alertService: AlertService,
   ) {
-    // redirect to home if already logged in
+    // redirect to customerhome if already logged in
     if (this.chefAuthService.currentUserValue || this.customerAuthService.currentUserValue) {
       this.router.navigate(['/']);
     }
@@ -36,7 +36,10 @@ export class RegisterComponent implements OnInit {
       address: null,
       bankAccount: null,
       orders: null,
-      currentOrder: null
+      currentOrder: null,
+      dishes: null,
+      rating: null,
+      votes: null,
     });
 
 

@@ -1,0 +1,56 @@
+<p>
+  {{currentUser.firstName}}
+  <button routerLink="/login" (click)="chefAuthService.logout()">Logout</button>
+</p>
+
+
+<h1>Hi {{currentUser.firstName}}!</h1>
+
+<fieldset>
+  <legend>Update account settings</legend>
+  <div>
+    <p>First Name:</p>
+    <input type="text" id="firstName" >
+    <p>Last Name:</p>
+    <input type="text" id="lastName" >
+  </div>
+  <div>
+    <p>Password:</p>
+    <input type="password" id="password" >
+  </div>
+  <div>
+    <p>Address:</p>
+    <input type="text" id="address" >
+  </div>
+  <div>
+    <p>Bank Account:</p>
+    <input type="text" id="bank" >
+  </div>
+  <div>
+    <br>
+    <button (click)="updateUser()" class="btn btn-primary">Save</button>
+    <br>
+  </div>
+</fieldset>
+
+<div>
+  <br>
+  <button  routerLink="/chef-home" class="btn btn-primary">Home</button>
+  <br>
+</div>
+
+<!--
+<h2>Received orders:</h2>
+<p *ngIf="this.currentUser.orders.length=== 0">You have not received any orders yet!</p>
+<table *ngFor="let order of this.currentUser.orders">
+  <br>
+  <h3>Bestelling {{this.currentUser.orders.indexOf(order)+1}}</h3>
+  <tr *ngFor="let dish of order.dishes">
+    <td>Name: {{dish.name}}</td>
+    <td>Price: {{dish.price}}</td>
+    <td>Description: {{dish.description}}</td>
+    <td>Time: {{dish.serveTime}}</td>
+    <br>
+    <td>Amount{{order.dishCount[order.dishes.indexOf(dish)]}}</td>
+  </tr>
+</table>-->
