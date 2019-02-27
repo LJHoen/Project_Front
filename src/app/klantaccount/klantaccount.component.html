@@ -1,45 +1,47 @@
-<p>
+<div class="logintxt">
   {{currentUser.firstName}}
-  <button routerLink="/login" (click)="customerAuthService.logout()">Logout</button>
-</p>
+  <button routerLink="/login" (click)="customerAuthService.logout()" class="logout">Logout</button>
+</div>
 
-
-<h1>Hi {{currentUser.firstName}}!</h1>
+<h1 class="hi">Hi {{currentUser.firstName}}!</h1>
 
 <fieldset>
-  <legend>Update account settings</legend>
-<div>
+  <legend class="logintxt">Update account settings</legend>
+<div class="acctxt">
     <p>First Name:</p>
     <input type="text" id="firstName" >
     <p>Last Name:</p>
     <input type="text" id="lastName" >
   </div>
-  <div>
+  <div class="acctxt">
     <p>Password:</p>
     <input type="password" id="password" >
   </div>
-  <div>
+  <div class="acctxt">
     <p>Address:</p>
     <input type="text" id="address" >
   </div>
-  <div>
+  <div class="acctxt">
     <p>Bank Account:</p>
     <input type="text" id="bank" >
   </div>
-  <div>
+  <div class="form-group6">
     <br>
-    <button (click)="updateUser()" class="btn btn-primary">Save</button>
+    <button (click)="updateUser()" class="btn btn-primary1">Save</button>
     <br>
   </div>
 </fieldset>
 
-<div>
+<div class="form-group4">
   <br>
-  <button  routerLink="/customerhome" class="btn btn-primary">Home</button>
+  <button  routerLink="/customerhome" class="btn btn-primary2">Home</button>
   <br>
 </div>
-
-  <h2>Bestelling history:</h2>
+<div>
+  <p></p>
+  <h2 class="logintxt">Bestel geschiedenis:</h2>
+</div>
+<div class="logintxt">
 <p *ngIf="this.currentUser.history.length=== 0">You have not ordered anything yet!</p>
   <table *ngFor="let order of this.currentUser.history">
     <br>
@@ -53,3 +55,4 @@
       <td>Amount{{order.dishCount[order.dishes.indexOf(dish)]}}</td>
     </tr>
   </table>
+</div>

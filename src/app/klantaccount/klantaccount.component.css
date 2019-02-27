@@ -1,0 +1,51 @@
+.hi {
+  font-family: Righteous;
+}
+.acctxt {
+  font-family: Righteous;
+}
+.form-group4 {
+  font-family: Righteous;
+  font-size: 18px;
+  transition:all 4s ease;
+  z-index:2;
+  float: left;
+  margin-top: -65px;
+  margin-left: 100px;
+}
+.form-group4:hover .btn.btn-primary2{
+  border:0px solid #34495e;
+  color:#34495e;
+}
+.form-group6 {
+  font-family: Righteous;
+  font-size: 18px;
+  transition:all 4s ease;
+  z-index:2;
+  float: left;
+}
+.form-group6:hover .btn.btn-primary1{
+  border:0px solid #34495e;
+  color:#34495e;
+}
+.logout {
+  font-family: Righteous;
+  border: none;
+  background: #404040;
+  color: #ffffff !important;
+  font-weight: 100;
+  padding: 0px 5px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  display: inline-block;
+  font-size: smaller;
+}
+.logout:hover {
+  color: #404040 !important;
+  font-weight: 700 !important;
+  letter-spacing: 3px;
+  background: none;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.3s ease 0s;
+}

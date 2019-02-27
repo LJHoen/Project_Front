@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "app/login/login.component.css";
 @import "app/app.component.css";
-@import "app/register/register.component.css";
+@import "app/klantaccount/klantaccount.component.css";
+@import "app/customerhome/customerhome.component.css";
 @import url(https://fonts.googleapis.com/css?family=Righteous);
 
 

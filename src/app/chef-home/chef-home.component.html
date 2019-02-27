@@ -1,31 +1,37 @@
-<p>
+<p class="logintxt">
   {{currentUser.firstName}}
-  <button routerLink="/login" (click)="chefAuthService.logout()">Logout</button>
+  <button routerLink="/login" (click)="chefAuthService.logout()" class="logout">Logout</button>
 </p>
 
-
 <table>
-  <h2>Bekijk hier jouw gerechten: </h2>
-  <tr *ngFor="let dish of currentUser.dishes">
+  <h2 class="cheftxt">Bekijk hier jouw gerechten: </h2>
+  <tr class="tablehead">
+    <th>Gerecht</th>
+    <th>Prijs</th>
+    <th>Omschrijving</th>
+    <th>Bereidingstijd</th>
+  </tr>
+  <tr *ngFor="let dish of currentUser.dishes" class="custxt">
     <td>{{dish.name}}</td>
-    <td>{{dish.price}}</td>
+    <td>€{{dish.price}}</td>
     <td>{{dish.description}}</td>
     <td>{{dish.serveTime}}</td>
-    <td><button (click)="deleteDish(dish)">del</button></td>
+    <td><button (click)="deleteDish(dish)" class="deldish">del</button></td>
   </tr>
 </table>
 
 <fieldset>
-  <legend>Voeg hieronder nieuwe gerechten toe!</legend>
-<div>
-  <form [formGroup]="chefHome" (ngSubmit)="saveMenu($event)">
+  <legend class="custxt">Voeg hieronder nieuwe gerechten toe!</legend>
+<div class="custxt">
+  <form [formGroup]="chefHome" (ngSubmit)="saveMenu($event); chefHome.reset()">
     <p><input formControlName="name" type="text" placeholder="Naam gerecht"></p>
     <p><input formControlName="price" type="number" placeholder="Prijs"></p>
     <p><input formControlName="description" type="text" placeholder="Omschrijving"></p>
     <p><input formControlName="serveTime" type="text" placeholder="Serveertijd"></p>
-    <p><button type="submit" >Opslaan</button></p>
+    <p><button type="submit" class="btn btn-primary2">Opslaan</button></p>
   </form>
 </div>
 </fieldset>
-
-<button routerLink="/chefaccount" class="btn btn-primary">Account</button>
+<div class="form-group7">
+<button routerLink="/chefaccount" class="btn btn-primary2">Account</button>
+</div>

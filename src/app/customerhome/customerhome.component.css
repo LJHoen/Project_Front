@@ -1,0 +1,99 @@
+.custxt {
+  font-family: Righteous;
+}
+.form-group5 {
+  font-family: Righteous;
+  font-size: 18px;
+  transition:all 4s ease;
+  z-index:2;
+  float: left;
+  /*margin-top: -65px;*/
+  margin-left: 100px;
+}
+.form-group5:hover .btn.btn-primary2{
+  border:0px solid #34495e;
+  color:#34495e;
+}
+table {
+  border-collapse: collapse;
+  /*border-spacing: 20px 10px;*/
+}
+td {
+  padding: 5px 20px;
+  background-color: rgba(240, 130, 0, 0.3);
+}
+tr {
+  border: 1px solid lightgray;
+  -moz-box-shadow: 0 0 10px gray;
+  -webkit-box-shadow: 0 0 10px gray;
+  box-shadow: 0 0 10px gray;
+}
+.tablehead {
+  font-family: Righteous;
+  font-size: larger;
+}
+.adddish {
+  font-family: Righteous;
+  border: none;
+  background: #404040;
+  color: #ffffff !important;
+  font-weight: 100;
+  padding: 0px 5px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  display: inline-block;
+}
+.adddish:hover {
+  color: #404040 !important;
+  font-weight: 700 !important;
+  letter-spacing: 3px;
+  background: none;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.3s ease 0s;
+}
+.logout {
+  font-family: Righteous;
+  border: none;
+  background: #404040;
+  color: #ffffff !important;
+  font-weight: 100;
+  padding: 0px 5px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  display: inline-block;
+  font-size: smaller;
+}
+.logout:hover {
+  color: #404040 !important;
+  font-weight: 700 !important;
+  letter-spacing: 3px;
+  background: none;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.3s ease 0s;
+}
+.gerechtenvan {
+  font-family: Righteous;
+  position: absolute;
+}
+.naamchef {
+  font-family: Righteous;
+  text-decoration-line: underline;
+  padding-left: 168px;
+  color: #404040;
+}
+.cuswelkomtxt {
+  color: white;
+  font-family: 'Righteous';
+  font-size: 40px;
+  text-align: center;
+  text-shadow: 2px 2px 0 hsla(230,40%,50%,1);
+}
+.cuswelkomtxt2 {
+  color: white;
+  font-family: 'Righteous';
+  font-size: 28px;
+  text-align: center;
+  text-shadow: 2px 2px 0 hsla(230,40%,50%,1);
+}
