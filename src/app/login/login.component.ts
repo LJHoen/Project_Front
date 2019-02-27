@@ -53,7 +53,11 @@ export class LoginComponent implements OnInit {
         .pipe(first())
         .subscribe(
           data => {
-            this.router.navigate(['chef-home']);
+            if (data !== undefined && data !== null) {
+              this.router.navigate(['chef-home']);
+            }
+            this.alertService.error('Account not found');
+            this.loading = false;
           },
           error => {
             this.alertService.error(error);
@@ -65,10 +69,14 @@ export class LoginComponent implements OnInit {
         .subscribe(
 
           data => {
-            this.router.navigate(['customerhome']);
+            if (data !== undefined && data !== null) {
+              this.router.navigate(['customerhome']);
+            }
+            this.alertService.falseAccountError('Account not found');
+            this.loading = false;
           },
           error => {
-            this.alertService.error(error);
+            this.alertService.falseAccountError(error);
             this.loading = false;
           });
     }

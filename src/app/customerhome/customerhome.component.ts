@@ -43,11 +43,6 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
     });
   }
 
-
-
-
-
-
   addDish(dish: Dish) {
     this.currentUserSubscription = this.customerAuthService.currentUser.subscribe(user => {
       this.currentUser = user;
@@ -81,11 +76,6 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
     } );
 
   }
-
-
-
-
-
 
   updatePrice() {
     let  totalSum  = 0;
