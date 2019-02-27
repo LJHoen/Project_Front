@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Chef } from '../_models';
+import {Observable} from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ChefService {
@@ -10,8 +11,8 @@ export class ChefService {
     return this.http.get<Chef[]>(`${'http://localhost:8080/'}chefs`);
   }
 
-  getById(id: number) {
-    return this.http.get(`${'http://localhost:8080/'}chefs/${id}`);
+  getById(id: number) : Observable<Chef> {
+    return this.http.get<Chef>(`${'http://localhost:8080/'}chefs/${id}`);
   }
 
   register(chef: Chef) {

@@ -6,12 +6,13 @@
 <fieldset>
 <ul>
   <h3>Your ordered items:</h3>
-  <div *ngIf="currentUser.currentBestelling.length > 0">
-  <li  *ngFor="let dish of currentUser.currentBestelling" >
-    {{dish.name}} ({{dish.price}} {{dish.description}} {{dish.serveTime}})
-
+  <div *ngIf="currentUser.currentBestelling.dishes.length > 0">
+  <li  *ngFor="let dish of currentUser.currentBestelling.dishes" >
+    {{dish.name}} ({{dish.price}} {{dish.description}} {{dish.serveTime}}
+    {{currentUser.currentBestelling.dishCount[currentUser.currentBestelling.dishes.indexOf(dish)]}})
+   <button (click)="deleteDish(dish)">Del</button>
   </li>
-    <p>Total sum: {{currentUser.currentBestelling.price}}</p>
+    <p>Total price: {{currentUser.currentBestelling.price}}</p>
   </div>
 </ul>
   <button (click)="onSubmit()">Checkout</button>

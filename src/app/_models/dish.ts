@@ -1,13 +1,13 @@
 export class Dish {
-  id: Number = 0;
+  id: number;
   name: String;
   price: number;
   description: String;
   serveTime: String;
   listed: boolean;
-  creator: string;
+  creator: number;
 
-  constructor(id: Number, name: String, price: number, description: String, serveTime: String, listed: boolean, creator: string) {
+  constructor(id: number, name: String, price: number, description: String, serveTime: String, listed: boolean, creator: number) {
     this.id = id;
     this.name = name;
     this.price = price;

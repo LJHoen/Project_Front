@@ -1,14 +1,10 @@
 import {User} from './user';
 import {Dish} from './dish';
+import {Bestelling} from './bestelling';
 
 export class Chef extends User {
   dishes: Dish[] = [];
+  bestellingen: Bestelling[] = [];
   rating: number;
   votes: number;
-
-  /*constructor(id: string, username: string, password: string, firstName: string, lastName: string,
-              address: string, bankAccount: string, token: string, dishes: Dish[]) {
-    super(id, username, password, firstName, lastName, address, bankAccount, token);
-    this.dishes = dishes;
-  }*/
 }

@@ -28,9 +28,10 @@ export class AppComponent {
     // check account type and redirect based on type
     if (this.currentUser1 !== null) {
       this.router.navigate(['/chef-home']);
-    }
-    if (this.currentUser2 !== null) {
+    } else if (this.currentUser2 !== null) {
       this.router.navigate(['/customerhome']);
+    } else {
+      this.router.navigate(['/login']);
     }
   }
 
