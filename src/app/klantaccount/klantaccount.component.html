@@ -41,6 +41,7 @@
   <p></p>
   <h2 class="logintxt">Bestel geschiedenis:</h2>
 </div>
+
 <div class="logintxt">
 <p *ngIf="this.currentUser.history.length=== 0">You have not ordered anything yet!</p>
   <table *ngFor="let order of this.currentUser.history">

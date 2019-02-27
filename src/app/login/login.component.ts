@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
             if (data !== undefined && data !== null) {
               this.router.navigate(['chef-home']);
             }
-            this.alertService.error('Account not found');
+            this.alertService.error('Chef account not found');
             this.loading = false;
           },
           error => {
@@ -72,7 +72,7 @@ export class LoginComponent implements OnInit {
             if (data !== undefined && data !== null) {
               this.router.navigate(['customerhome']);
             }
-            this.alertService.falseAccountError('Account not found');
+            this.alertService.falseAccountError('Customer account not found');
             this.loading = false;
           },
           error => {
