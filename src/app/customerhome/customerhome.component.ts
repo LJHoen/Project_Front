@@ -4,7 +4,6 @@ import { first } from 'rxjs/operators';
 import {Chef, Customer, Bestelling} from '../_models';
 import { Dish } from '../_models';
 import {ChefService, CustomerAuthService, CustomerService} from '../_services';
-import {forEach} from '@angular/router/src/utils/collection';
 
 @Component({ templateUrl: 'customerhome.component.html' })
 export class CustomerHomeComponent implements OnInit, OnDestroy {
@@ -27,9 +26,9 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.currentUserSubscription = this.customerAuthService.currentUser.subscribe(user => {
+/*    this.currentUserSubscription = this.customerAuthService.currentUser.subscribe(user => {
       this.currentUser = user;
-    });
+    });*/
   }
 
   ngOnDestroy() {
