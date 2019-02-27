@@ -26,6 +26,11 @@ export class AppComponent {
       return this.currentUser2 = y;
     });
     // check account type and redirect based on type
+    console.log('in app.home');
+    console.log('cU1');
+    console.log(this.currentUser1);
+    console.log('cU2')
+    console.log(this.currentUser2);
     if (this.currentUser1 !== null) {
       this.router.navigate(['/chef-home']);
     } else if (this.currentUser2 !== null) {

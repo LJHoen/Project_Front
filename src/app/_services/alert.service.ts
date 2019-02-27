@@ -32,6 +32,12 @@ export class AlertService {
     this.subject.next({ type: 'error', text: message });
   }
 
+  falseAccountError(message: string, keepAfterNavigationChange = false) {
+    this.keepAfterNavigationChange = false;
+    this.subject.next({ type: 'error', text: message });
+    this.router.events.subscribe( event => { this.subject.next(); });
+  })
+
   getMessage(): Observable<any> {
     return this.subject.asObservable();
   }
