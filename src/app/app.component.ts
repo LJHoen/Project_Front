@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CustomerAuthService } from './_services';
 import { ChefAuthService } from './_services';
@@ -33,6 +33,10 @@ export class AppComponent {
     } else {
       this.router.navigate(['/login']);
     }
+  }
+
+  ngOnInit() {
+    
   }
 
   logout() {
