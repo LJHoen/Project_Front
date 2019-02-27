@@ -1,0 +1,74 @@
+.form-group7 {
+  font-family: Righteous;
+  font-size: 18px;
+  transition:all 4s ease;
+  z-index:2;
+  float: left;
+}
+.form-group7:hover .btn.btn-primary2{
+  border:0px solid #34495e;
+  color:#34495e;
+}
+.cheftxt {
+  font-family: Righteous;
+  display: table-caption;
+}
+table {
+  border-collapse: collapse;
+  /*border-spacing: 20px 10px;*/
+}
+td {
+  padding: 5px 20px;
+  background-color: rgba(240, 130, 0, 0.3);
+}
+tr {
+  border: 1px solid lightgray;
+  -moz-box-shadow: 0 0 10px gray;
+  -webkit-box-shadow: 0 0 10px gray;
+  box-shadow: 0 0 10px gray;
+}
+.tablehead {
+  font-family: Righteous;
+  font-size: larger;
+}
+.deldish {
+  font-family: Righteous;
+  border: none;
+  background: #404040;
+  color: #ffffff !important;
+  font-weight: 100;
+  padding: 0px 5px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  display: inline-block;
+}
+.deldish:hover {
+  color: #404040 !important;
+  font-weight: 700 !important;
+  letter-spacing: 3px;
+  background: none;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.3s ease 0s;
+}
+.logout {
+  font-family: Righteous;
+  border: none;
+  background: #404040;
+  color: #ffffff !important;
+  font-weight: 100;
+  padding: 0px 5px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  display: inline-block;
+  font-size: smaller;
+}
+.logout:hover {
+  color: #404040 !important;
+  font-weight: 700 !important;
+  letter-spacing: 3px;
+  background: none;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.3s ease 0s;
+}
