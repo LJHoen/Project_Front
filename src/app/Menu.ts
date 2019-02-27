@@ -5,5 +5,4 @@ export class Menu {
   id: Number = 0;
   dishes: Dish[] = [];
 
-  constructor() {}
 }
