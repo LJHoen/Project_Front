@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+@import "app/login/login.component.css";
+@import "app/app.component.css";
+@import "app/klantaccount/klantaccount.component.css";
+@import "app/customerhome/customerhome.component.css";
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+
+
+body {
+  background-image: url("/assets/peach-background3.jpg");
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: auto;
+}
+.bottom-mid {
+  margin-left: 50px;
+  margin-right: 50px;
+  width: auto;
+  padding: 10px;
+  border: 1px solid lightgray;
+  -moz-box-shadow: 0 0 10px gray;
+  -webkit-box-shadow: 0 0 10px gray;
+  box-shadow: 0 0 10px gray;
+  background-color: rgba(240, 0, 0, 0.3);
+}
+.welkom {
+  color: white;
+  font-family: 'Righteous';
+  font-size: 40px;
+  text-align: center;
+  text-shadow: 2px 2px 0 hsla(230,40%,50%,1);
+}
+
+.delen {
+  color: white;
+  font-family: Righteous;
+  font-size: 30px;
+  font-weight: lighter;
+}
+.hometext {
+  color: white;
+  font-family: Righteous;
+  font-size: 20px;
+  font-weight: lighter;
+}
+

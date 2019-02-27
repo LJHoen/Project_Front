@@ -1,18 +1,30 @@
-<p>
+<p class="logintxt">
   {{currentUser.firstName}}
-  <button routerLink="/login" (click)="customerAuthService.logout()">Logout</button>
+  <button routerLink="/login" (click)="customerAuthService.logout()"  class="logout">Logout</button>
 </p>
 
-
-<h1>Welcome to EAT ME!!</h1>
-<h3>All available dishes:</h3>
-<div *ngFor="let chef of chefs">
-  <tr *ngFor="let dish of chef.dishes">
-    <td >{{dish.name}} {{dish.price}} {{dish.description}} {{dish.serveTime}}</td>
-    <!--<td *ngIf="dish.listed">{{dish.name}} {{dish.price}} {{dish.serveTime}}</td>-->
-    <button (click)="addDish(dish)" class="btn btn-primary">Add</button>
+<table>
+<h1 class="cuswelkomtxt" data-shadow="eatme">Hi {{currentUser.firstName}}!!</h1>
+<h4 class="cuswelkomtxt2" data-shadow="eatme">Bekijk hieronder alle beschikbare gerechten:</h4>
+  <div *ngFor="let chef of chefs">
+      <h4 class="gerechtenvan">Gerechten van</h4> <h4 class="naamchef"><a routerLink="/klantaccount">{{chef.firstName}}</a></h4>
+  <tr class="tablehead">
+    <th>Gerecht</th>
+    <th>Prijs</th>
+    <th>Omschrijving</th>
+    <th>Bereidingstijd</th>
   </tr>
+  <tr *ngFor="let dish of chef.dishes" class="custxt">
+    <td>{{dish.name}}</td>
+    <td>€{{dish.price}}</td>
+    <td>{{dish.description}}</td>
+    <td>{{dish.serveTime}}</td>
+    <!--<td *ngIf="dish.listed">{{dish.name}} {{dish.price}} {{dish.serveTime}}</td>-->
+    <td><button (click)="addDish(dish)" class="adddish">Add</button></td>
+  </tr>
+    <p></p>
 </div>
+</table>
 
 
 
@@ -32,8 +44,10 @@
   <td><button (click)="addDish(dish.id)" class="btn btn-primary">Add</button></td>
 </tr>
 -->
-
-
-<button routerLink="/shoppingcart" class="btn btn-primary">Shopping Cart</button>
-<button routerLink="/klantaccount" class="btn btn-primary">Account</button>
-
+<p></p>
+<div class="form-group2">
+<button routerLink="/shoppingcart" class="btn btn-primary1">Shopping Cart</button>
+</div>
+<div class="form-group5">
+<button routerLink="/klantaccount" class="btn btn-primary2">Account</button>
+</div>

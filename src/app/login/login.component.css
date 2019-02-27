@@ -1,0 +1,54 @@
+
+.form-group {
+  color: darkgray;
+  font-family: Righteous;
+  font-size: 18px;
+}
+.form-group2 {
+  font-family: Righteous;
+  font-size: 18px;
+  transition:all 4s ease;
+  z-index:2;
+  float: left;
+}
+.form-group3 {
+  font-family: Righteous;
+  font-size: 18px;
+  transition:all 4s ease;
+  z-index:2;
+  float: right;
+}
+.btn.btn-primary1 {
+  background-color: orange;
+  border-color: chocolate;
+}
+.btn.btn-primary2 {
+  background-color: orange;
+  border-color: chocolate;
+}
+.btn.btn-link {
+  color: cornflowerblue;
+  font-size: 18px;
+  margin-top: 35px;
+  margin-left: -100px;
+  margin-right: 8px;
+  /*position:absolute;*/
+  /*transition:all .5s ease;*/
+  /*z-index:1;*/
+  /*box-sizing:border-box;*/
+}
+.logintxt {
+  font-family: Righteous;
+}
+.form-group2:hover .btn.btn-primary1{
+  border:0px solid #34495e;
+  color:#34495e;
+}
+.form-group3:hover .btn.btn-primary2{
+  border:0px solid #34495e;
+  color:#34495e;
+}
+.register {
+  position: absolute;
+  margin-left: 108px;
+}

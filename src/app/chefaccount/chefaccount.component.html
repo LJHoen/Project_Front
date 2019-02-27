@@ -1,41 +1,42 @@
-<p>
+<p class="chefacctxt">
   {{currentUser.firstName}}
-  <button routerLink="/login" (click)="chefAuthService.logout()">Logout</button>
+  <button routerLink="/login" (click)="chefAuthService.logout()" class="logout">Logout</button>
 </p>
 
 
-<h1>Hi {{currentUser.firstName}}!</h1>
+<h1 class="chefacctxt">Hi {{currentUser.firstName}}!</h1>
+
 
 <fieldset>
-  <legend>Update account settings</legend>
-  <div>
+  <legend class="chefacctxt">Update account settings</legend>
+  <div class="chefacctxt">
     <p>First Name:</p>
     <input type="text" id="firstName" >
     <p>Last Name:</p>
     <input type="text" id="lastName" >
   </div>
-  <div>
+  <div class="chefacctxt">
     <p>Password:</p>
     <input type="password" id="password" >
   </div>
-  <div>
+  <div class="chefacctxt">
     <p>Address:</p>
     <input type="text" id="address" >
   </div>
-  <div>
+  <div class="chefacctxt">
     <p>Bank Account:</p>
     <input type="text" id="bank" >
   </div>
-  <div>
+  <div class="form-group6">
     <br>
-    <button (click)="updateUser()" class="btn btn-primary">Save</button>
+    <button (click)="updateUser()" class="btn btn-primary1">Save</button>
     <br>
   </div>
 </fieldset>
 
-<div>
+<div class="form-group4">
   <br>
-  <button  routerLink="/chef-home" class="btn btn-primary">Home</button>
+  <button  routerLink="/chef-home" class="btn btn-primary2">Home</button>
   <br>
 </div>
 

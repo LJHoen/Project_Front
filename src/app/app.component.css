@@ -1,0 +1,12 @@
+body {
+
+}
+.jumbotron {
+  background-image: url("../assets/dbfef58f6c2ed0a1de7ef635203d7048.jpg");
+  background-color: transparent;
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: auto;
+}
