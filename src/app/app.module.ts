@@ -10,7 +10,6 @@ import { AlertComponent } from './_components';
 import { routing } from './app.routing';
 
 import { ChefHomeComponent } from './chef-home/chef-home.component';
-import { MenuListComponent } from './menu-list/menu-list.component';
 import { KlantAccountComponent } from './klantaccount/klantaccount.component';
 import { ShoppingCartComponent } from './shoppingcart/shoppingcart.component';
 import { ChefAccountComponent } from './chefaccount/chefaccount.component';
@@ -23,7 +22,6 @@ import { ChefgegevensComponent } from './chefgegevens/chefgegevens.component';
     RegisterComponent,
     AlertComponent,
     ChefHomeComponent,
-    MenuListComponent,
     CustomerHomeComponent,
     AlertComponent,
     KlantAccountComponent,

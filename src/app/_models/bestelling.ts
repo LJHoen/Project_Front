@@ -7,10 +7,9 @@ export class Bestelling {
   dishCount: number[] = [];
   price: number;
 
-  constructor(id: number, dishes: Dish[], dishCount: number[], price: number, besteller: String) {
+  constructor(id: number, dishes: Dish[], dishCount: number[], price: number) {
     this.id = id;
     this.dishes = dishes;
     this.price = price;
-    this.besteller = besteller;
   }
 }

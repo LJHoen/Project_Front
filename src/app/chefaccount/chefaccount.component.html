@@ -5,7 +5,7 @@
 
 
 <h1 class="chefacctxt">Hi {{currentUser.firstName}}!</h1>
-<p>Average rating: {{(currentUser.rating/currentUser.votes).toFixed(1)}}</p>
+<p>Gemiddelde rating: {{(currentUser.rating/currentUser.votes).toFixed(1)}}</p>
 
 
 <fieldset>
@@ -45,7 +45,6 @@
 <p *ngIf="this.currentUser.bestellingen.length=== 0">You have not received any orders yet!</p>
 <table *ngFor="let order of this.currentUser.bestellingen" >
   <br>
-  <p>Customer: {{order.besteller}} </p>
   <h3>Bestelling {{this.currentUser.bestellingen.indexOf(order)+1}}</h3>
   <tr *ngFor="let dish of order.dishes">
     <td>Name: {{dish.name}}</td>
@@ -53,6 +52,6 @@
     <td>Description: {{dish.description}}</td>
     <td>Time: {{dish.serveTime}}</td>
     <br>
-    <td>Amount{{order.dishCount[order.dishes.indexOf(dish)]}}</td>
+    <td>Amount: {{order.dishCount[order.dishes.indexOf(dish)]}}</td>
   </tr>
 </table>

@@ -10,7 +10,7 @@
   <div class="gegevensbox">
   <p class="gegevenstxt">Naam: {{chef.firstName}} {{chef.lastName}}</p>
   <p class="gegevenstxt">Adres: {{chef.address}}</p>
-  <p class="gegevenstxt">Gem. Beoordeling: {{chef.rating}}</p>
+  <p class="gegevenstxt">Gem. Beoordeling: {{(chef.rating/chef.votes).toFixed(1)}}</p>
   <p class="gegevenstxt">Aantal stemmen: {{chef.votes}}</p>
   <p></p>
   </div>
