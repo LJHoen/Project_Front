@@ -21,7 +21,9 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
     this.currentUserSubscription = this.customerAuthService.currentUser.subscribe(user => {
       this.currentUser = user;
     });
-    console.log(this.currentUser);
+    if (this.currentUser.currentBestelling === null) {
+      this.currentUser.currentBestelling = new Bestelling(0,[],[],0);
+     this.customerService.update(this.currentUser).subscribe(); }
     this.loadAllChefs();
   }
 
@@ -48,7 +50,7 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
     });
 
     if (this.currentUser.currentBestelling === null) {
-      this.currentUser.currentBestelling = new Bestelling(0, [], [], 0, ''); }
+      this.currentUser.currentBestelling = new Bestelling(0, [], [], 0); }
     const increment = 1;
     let check = false;
     let tempDish;
