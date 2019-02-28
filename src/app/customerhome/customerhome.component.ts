@@ -4,6 +4,7 @@ import { first } from 'rxjs/operators';
 import {Chef, Customer, Bestelling} from '../_models';
 import { Dish } from '../_models';
 import {ChefService, CustomerAuthService, CustomerService} from '../_services';
+import {forEach} from '@angular/router/src/utils/collection';
 
 @Component({ templateUrl: 'customerhome.component.html' })
 export class CustomerHomeComponent implements OnInit, OnDestroy {
@@ -20,9 +21,8 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
     this.currentUserSubscription = this.customerAuthService.currentUser.subscribe(user => {
       this.currentUser = user;
     });
-    this.loadAllChefs();
-    console.log('in constructor:' );
     console.log(this.currentUser);
+    this.loadAllChefs();
   }
 
   ngOnInit() {
@@ -45,23 +45,17 @@ export class CustomerHomeComponent implements OnInit, OnDestroy {
   addDish(dish: Dish) {
     this.currentUserSubscription = this.customerAuthService.currentUser.subscribe(user => {
       this.currentUser = user;
-      console.log('in addDish:');
-      console.log(this.currentUser);
     });
 
     if (this.currentUser.currentBestelling === null) {
-      this.currentUser.currentBestelling = new Bestelling(0, [], [], 0, parseInt(this.currentUser.id, 10)); }
-    console.log(this.currentUser.currentBestelling.dishes.includes(dish));
-    // console.log(this.currentUser.currentBestelling);
+      this.currentUser.currentBestelling = new Bestelling(0, [], [], 0, ''); }
     const increment = 1;
-    console.log(this.currentUser.currentBestelling.dishes);
     let check = false;
     let tempDish;
     for (let d of this.currentUser.currentBestelling.dishes) {
       if (d.id === dish.id) {
         check = true;
         tempDish = d;
-        console.log('duplicate found');
       }
     }
     if (check) {

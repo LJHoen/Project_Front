@@ -42,7 +42,7 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
         this.chef = c;
         this.chef.bestellingen.push(this.currentUser.currentBestelling);
         this.chefService.update(this.chef).subscribe();
-        this.currentUser.currentBestelling = new Bestelling(0, [], [], 0, parseInt(this.currentUser.id, 10));
+        this.currentUser.currentBestelling = new Bestelling(0, [], [], 0, '');
         this.customerService.update(this.currentUser).subscribe();
         this.router.navigate(['./customerhome']);
 

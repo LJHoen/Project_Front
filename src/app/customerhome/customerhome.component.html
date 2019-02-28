@@ -20,7 +20,8 @@
     <td>{{dish.description}}</td>
     <td>{{dish.serveTime}}</td>
     <!--<td *ngIf="dish.listed">{{dish.name}} {{dish.price}} {{dish.serveTime}}</td>-->
-    <td><button (click)="addDish(dish)" class="adddish">Add</button></td>
+    <td *ngIf="(currentUser.currentBestelling.dishes.length > 0 && currentUser.currentBestelling.dishes[0].creator === dish.creator) || currentUser.currentBestelling.dishes.length === 0">
+      <button (click)="addDish(dish)" class="adddish">Add</button></td>
   </tr>
     <p></p>
 </div>
