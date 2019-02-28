@@ -5,19 +5,19 @@
 
 <fieldset class="custxt">
 <ul>
-  <h3>Your ordered items:</h3>
+  <h3>Jou geselecteerde gerechten:</h3>
   <table>
   <div *ngIf="currentUser.currentBestelling.dishes.length > 0"><tr>
   <td><li  *ngFor="let dish of currentUser.currentBestelling.dishes" >
-    {{dish.name}} (€{{dish.price}} {{dish.description}} {{dish.serveTime}}
+    {{dish.name}} (€{{dish.price}} {{dish.description}} {{dish.serveTime}} Aantal:
     {{currentUser.currentBestelling.dishCount[currentUser.currentBestelling.dishes.indexOf(dish)]}})
    <button (click)="deleteDish(dish)" class="deldish2">Del</button>
   </li></td></tr>
-    <p>Total price: €{{currentUser.currentBestelling.price}}</p>
+    <p>Totaal prijs: €{{currentUser.currentBestelling.price}}</p>
   </div>
   </table>
 </ul>
-  <button (click)="onSubmit()" class="checkoutb">Checkout</button>
+  <button (click)="onSubmit()" class="checkoutb">Betalen</button>
 </fieldset>
 
 <div class="form-group8">
