@@ -1,8 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ChefAuthService, ChefService } from '../_services';
+import { Component, OnDestroy } from '@angular/core';
+import {ChefAuthService, ChefService, CustomerService} from '../_services';
 import { FormBuilder } from '@angular/forms';
-import { Chef } from '../_models';
-import { Subscription } from 'rxjs';
+import {Chef, Customer} from '../_models';
+import {Observable, Subscription} from 'rxjs';
 import { ActivatedRoute, Router} from '@angular/router';
 
 @Component({
@@ -20,6 +20,7 @@ export class ChefAccountComponent implements OnDestroy {
     private router: Router,
     private chefAuthService: ChefAuthService,
     private chefService: ChefService,
+    private customerService: CustomerService,
   ) {
     this.reloadUser();
   }
@@ -48,10 +49,4 @@ export class ChefAccountComponent implements OnDestroy {
     this.chefService.update(this.currentUser).subscribe();
     this.reloadUser();
   }
-
-/*  getBesteller() {
-
-  }*/
-
-
 }

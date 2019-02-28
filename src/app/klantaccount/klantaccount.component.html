@@ -46,7 +46,16 @@
 <p *ngIf="this.currentUser.history.length=== 0">Je hebt nog niks besteld!</p>
   <table *ngFor="let order of this.currentUser.history">
     <br>
+
     <h3 class="bestelling">Bestelling {{this.currentUser.history.indexOf(order)+1}}</h3>
+    <div class="rate">
+      <button id= "star1" (click)="rateUser(order.dishes[0].creator, 1)">1</button>
+      <button id= "star2" (click)="rateUser(order.dishes[0].creator, 2)">2</button>
+      <button id= "star3" (click)="rateUser(order.dishes[0].creator, 3)">3</button>
+      <button id= "star4" (click)="rateUser(order.dishes[0].creator, 4)">4</button>
+      <button id= "star5" (click)="rateUser(order.dishes[0].creator, 5)">5</button>
+</div>
+
     <tr *ngFor="let dish of order.dishes">
       <td>Gerecht: {{dish.name}}</td>
       <td>Prijs: €{{dish.price}}</td>

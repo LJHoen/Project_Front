@@ -5,6 +5,7 @@
 
 
 <h1 class="chefacctxt">Hi {{currentUser.firstName}}!</h1>
+<p>Average rating: {{(currentUser.rating/currentUser.votes).toFixed(1)}}</p>
 
 
 <fieldset>
@@ -39,6 +40,7 @@
   <button  routerLink="/chef-home" class="btn btn-primary2">Home</button>
   <br>
 </div>
+
 <p></p>
 <div class="logintxt">
 <h2>Ontvangen orders:</h2>
@@ -46,6 +48,7 @@
 <table *ngFor="let order of this.currentUser.bestellingen">
   <br>
   <h3 class="bestelling">Bestelling {{this.currentUser.bestellingen.indexOf(order)+1}}</h3>
+
   <tr *ngFor="let dish of order.dishes">
     <td>Gerecht: {{dish.name}}</td>
     <td>Prijs: {{dish.price}}</td>
