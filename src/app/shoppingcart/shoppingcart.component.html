@@ -1,25 +1,27 @@
-<p>
+<p class="logintxt">
   {{currentUser.firstName}}
-  <button routerLink="/login" (click)="customerAuthService.logout()">Logout</button>
+  <button routerLink="/login" (click)="customerAuthService.logout()" class="logout">Logout</button>
 </p>
 
-<fieldset>
+<fieldset class="custxt">
 <ul>
   <h3>Your ordered items:</h3>
-  <div *ngIf="currentUser.currentBestelling.dishes.length > 0">
-  <li  *ngFor="let dish of currentUser.currentBestelling.dishes" >
-    {{dish.name}} ({{dish.price}} {{dish.description}} {{dish.serveTime}}
+  <table>
+  <div *ngIf="currentUser.currentBestelling.dishes.length > 0"><tr>
+  <td><li  *ngFor="let dish of currentUser.currentBestelling.dishes" >
+    {{dish.name}} (€{{dish.price}} {{dish.description}} {{dish.serveTime}}
     {{currentUser.currentBestelling.dishCount[currentUser.currentBestelling.dishes.indexOf(dish)]}})
-   <button (click)="deleteDish(dish)">Del</button>
-  </li>
-    <p>Total price: {{currentUser.currentBestelling.price}}</p>
+   <button (click)="deleteDish(dish)" class="deldish2">Del</button>
+  </li></td></tr>
+    <p>Total price: €{{currentUser.currentBestelling.price}}</p>
   </div>
+  </table>
 </ul>
-  <button (click)="onSubmit()">Checkout</button>
+  <button (click)="onSubmit()" class="checkoutb">Checkout</button>
 </fieldset>
 
-<div>
+<div class="form-group8">
   <br>
-  <button  routerLink="/customerhome" class="btn btn-primary">Home</button>
+  <button  routerLink="/customerhome" class="btn btn-primary2">Home</button>
   <br>
 </div>
