@@ -56,9 +56,9 @@ export class LoginComponent implements OnInit {
             if (data !== undefined && data !== null) {
               this.router.navigate(['chef-home']);
             } else {
-              this.alertService.error('Chef account not found');
-              this.loading = false;
-            }
+
+            this.alertService.error('Chef account not found');
+            this.loading = false; }
           },
           error => {
             this.alertService.error(error);

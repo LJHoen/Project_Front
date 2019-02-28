@@ -1,7 +1,6 @@
 import { Dish } from './dish';
 
 export class Bestelling {
-  besteller: String;
   id: number;
   dishes: Dish[] = new Array<Dish>();
   dishCount: number[] = [];
