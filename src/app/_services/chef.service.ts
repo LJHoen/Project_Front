@@ -11,7 +11,7 @@ export class ChefService {
     return this.http.get<Chef[]>(`${'http://localhost:8080/'}chefs`);
   }
 
-  getById(id: number) : Observable<Chef> {
+  getById(id: number): Observable<Chef> {
     return this.http.get<Chef>(`${'http://localhost:8080/'}chefs/${id}`);
   }
 

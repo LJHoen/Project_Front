@@ -1,0 +1,17 @@
+.chefgegevens {
+  font-family: Righteous;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.gegevenstxt {
+  font-size: 20px;
+}
+.gegevensbox {
+  border-collapse: collapse;
+  padding: 5px 20px;
+  background-color: rgba(240, 130, 0, 0.3);
+  border: 1px solid lightgray;
+  -moz-box-shadow: 0 0 10px gray;
+  -webkit-box-shadow: 0 0 10px gray;
+  box-shadow: 0 0 10px gray;
+}
