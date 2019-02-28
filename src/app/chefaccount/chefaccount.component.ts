@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import {ChefAuthService, ChefService, CustomerService} from '../_services';
 import { FormBuilder } from '@angular/forms';
 import {Chef, Customer} from '../_models';
@@ -13,7 +13,6 @@ import { ActivatedRoute, Router} from '@angular/router';
 export class ChefAccountComponent implements OnDestroy {
   currentUser: Chef;
   currentUserSubscription: Subscription;
-  besteller: Observable<Customer>;
 
   constructor(
     private formBuilder: FormBuilder,

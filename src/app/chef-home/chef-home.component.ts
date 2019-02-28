@@ -1,6 +1,6 @@
 import {Component, Input, NgModule, OnInit, OnDestroy} from '@angular/core';
 import {MenuService} from '../menu.service';
-import {ChefService} from '../_services';
+import {AlertService, ChefService} from '../_services';
 import {FormBuilder, Validators} from '@angular/forms';
 import {MenuListComponent} from '../menu-list/menu-list.component';
 import {ActivatedRoute, Router} from '@angular/router';
