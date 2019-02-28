@@ -1,8 +1,6 @@
-import {Component, Input, NgModule, OnInit, OnDestroy} from '@angular/core';
-import {MenuService} from '../menu.service';
-import {AlertService, ChefService} from '../_services';
+import {Component, NgModule, OnInit, OnDestroy} from '@angular/core';
+import {ChefService} from '../_services';
 import {FormBuilder, Validators} from '@angular/forms';
-import {MenuListComponent} from '../menu-list/menu-list.component';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ChefAuthService} from '../_services';
 import {Chef, Dish} from '../_models';
@@ -13,7 +11,6 @@ import {Subscription} from 'rxjs';
   selector: 'app-chef-home',
   templateUrl: './chef-home.component.html',
   styleUrls: ['./chef-home.component.css'],
-  providers:  [MenuService],
 })
 
 @NgModule({
@@ -22,9 +19,6 @@ export class ChefHomeComponent implements OnInit, OnDestroy {
   currentUser: Chef;
   currentUserSubscription: Subscription;
   dish: Dish;
-
-  @Input()
-  menuList: MenuListComponent;
 
   constructor(
     public fb: FormBuilder,
