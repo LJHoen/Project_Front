@@ -8,6 +8,7 @@ import { KlantAccountComponent } from './klantaccount/klantaccount.component';
 import { ShoppingCartComponent } from './shoppingcart/shoppingcart.component';
 import {AppComponent} from './app.component';
 import {ChefAccountComponent} from './chefaccount/chefaccount.component';
+import {ChefgegevensComponent} from './chefgegevens/chefgegevens.component';
 
 
 const appRoutes: Routes = [
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
   {path: 'shoppingcart', component: ShoppingCartComponent },
   {path: 'customerhome', component: CustomerHomeComponent },
   {path: 'chefaccount', component: ChefAccountComponent },
+  {path: 'chefgegevens/:id', component: ChefgegevensComponent},
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
 ];

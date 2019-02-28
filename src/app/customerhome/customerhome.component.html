@@ -7,7 +7,7 @@
 <h1 class="cuswelkomtxt" data-shadow="eatme">Hi {{currentUser.firstName}}!!</h1>
 <h4 class="cuswelkomtxt2" data-shadow="eatme">Bekijk hieronder alle beschikbare gerechten:</h4>
   <div *ngFor="let chef of chefs">
-      <h4 class="gerechtenvan">Gerechten van</h4> <h4 class="naamchef"><a routerLink="/klantaccount">{{chef.firstName}}</a></h4>
+      <h4 class="gerechtenvan">Gerechten van</h4> <h4 class="naamchef"><a routerLink="/chefgegevens/{{chef.id}}"> {{chef.firstName}} </a></h4>
   <tr class="tablehead">
     <th>Gerecht</th>
     <th>Prijs</th>

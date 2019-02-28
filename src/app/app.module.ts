@@ -14,6 +14,7 @@ import { MenuListComponent } from './menu-list/menu-list.component';
 import { KlantAccountComponent } from './klantaccount/klantaccount.component';
 import { ShoppingCartComponent } from './shoppingcart/shoppingcart.component';
 import { ChefAccountComponent } from './chefaccount/chefaccount.component';
+import { ChefgegevensComponent } from './chefgegevens/chefgegevens.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ChefAccountComponent } from './chefaccount/chefaccount.component';
     KlantAccountComponent,
     ShoppingCartComponent,
     ChefAccountComponent,
+    ChefgegevensComponent,
   ],
   imports: [
     BrowserModule,
