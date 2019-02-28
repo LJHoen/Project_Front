@@ -5,31 +5,32 @@
 
 
 <h1 class="chefacctxt">Hi {{currentUser.firstName}}!</h1>
+<p>Average rating: {{(currentUser.rating/currentUser.votes).toFixed(1)}}</p>
 
 
 <fieldset>
-  <legend class="chefacctxt">Update account settings</legend>
+  <legend class="chefacctxt">Update je account gegevens</legend>
   <div class="chefacctxt">
-    <p>First Name:</p>
+    <p>Voornaam:</p>
     <input type="text" id="firstName" >
-    <p>Last Name:</p>
+    <p>Achternaam:</p>
     <input type="text" id="lastName" >
   </div>
   <div class="chefacctxt">
-    <p>Password:</p>
+    <p>Wachtwoord:</p>
     <input type="password" id="password" >
   </div>
   <div class="chefacctxt">
-    <p>Address:</p>
+    <p>Adres:</p>
     <input type="text" id="address" >
   </div>
   <div class="chefacctxt">
-    <p>Bank Account:</p>
+    <p>Bankrekening:</p>
     <input type="text" id="bank" >
   </div>
   <div class="form-group6">
     <br>
-    <button (click)="updateUser()" class="btn btn-primary1">Save</button>
+    <button (click)="updateUser()" class="btn btn-primary1">Opslaan</button>
     <br>
   </div>
 </fieldset>
@@ -40,17 +41,21 @@
   <br>
 </div>
 
-<h2>Received orders:</h2>
-<p *ngIf="this.currentUser.bestellingen.length=== 0">You have not received any orders yet!</p>
+<p></p>
+<div class="logintxt">
+<h2>Ontvangen orders:</h2>
+<p *ngIf="this.currentUser.bestellingen.length=== 0">Je hebt nog geen orders ontvangen!</p>
 <table *ngFor="let order of this.currentUser.bestellingen">
   <br>
-  <h3>Bestelling {{this.currentUser.bestellingen.indexOf(order)+1}}</h3>
+  <h3 class="bestelling">Bestelling {{this.currentUser.bestellingen.indexOf(order)+1}}</h3>
+
   <tr *ngFor="let dish of order.dishes">
-    <td>Name: {{dish.name}}</td>
-    <td>Price: {{dish.price}}</td>
-    <td>Description: {{dish.description}}</td>
-    <td>Time: {{dish.serveTime}}</td>
+    <td>Gerecht: {{dish.name}}</td>
+    <td>Prijs: {{dish.price}}</td>
+    <td>Omschrijving: {{dish.description}}</td>
+    <td>Serveertijd: {{dish.serveTime}}</td>
     <br>
-    <td>Amount{{order.dishCount[order.dishes.indexOf(dish)]}}</td>
+    <td>Aantal {{order.dishCount[order.dishes.indexOf(dish)]}}</td>
   </tr>
 </table>
+</div>

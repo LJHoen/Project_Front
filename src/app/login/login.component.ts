@@ -55,9 +55,10 @@ export class LoginComponent implements OnInit {
           data => {
             if (data !== undefined && data !== null) {
               this.router.navigate(['chef-home']);
-            }
+            } else {
+
             this.alertService.error('Chef account not found');
-            this.loading = false;
+            this.loading = false; }
           },
           error => {
             this.alertService.error(error);
@@ -71,9 +72,10 @@ export class LoginComponent implements OnInit {
           data => {
             if (data !== undefined && data !== null) {
               this.router.navigate(['customerhome']);
+            } else {
+              this.alertService.falseAccountError('Customer account not found');
+              this.loading = false;
             }
-            this.alertService.falseAccountError('Customer account not found');
-            this.loading = false;
           },
           error => {
             this.alertService.falseAccountError(error);
