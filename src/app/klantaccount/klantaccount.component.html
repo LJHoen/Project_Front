@@ -48,6 +48,7 @@
     <br>
 
     <h3 class="bestelling">Bestelling {{this.currentUser.history.indexOf(order)+1}}</h3>
+    <h5 class="beoordeling"> Beoordeling: </h5>
     <div class="rate">
       <button id= "star1" (click)="rateUser(order.dishes[0].creator, 1)">1</button>
       <button id= "star2" (click)="rateUser(order.dishes[0].creator, 2)">2</button>

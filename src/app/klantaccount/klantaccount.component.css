@@ -1,6 +1,12 @@
 .hi {
   font-family: Righteous;
 }
+.rate {
+  font-family: Righteous;
+  position: absolute;
+  margin-left: 120px;
+  margin-top: -35px;
+}
 .acctxt {
   font-family: Righteous;
 }
